@@ -1,0 +1,20 @@
+{
+  "hero": {
+    "badge": "LET'S WORK TOGETHER",
+    "headline": "Start a ",
+    "headlineHighlight": "conversation.",
+    "description": "Tell us about your website project and we'll respond within one business day with a clear plan and honest quote."
+  },
+  "contactDetails": {
+    "email": "hello@crosstech.co",
+    "supportEmail": "support@crosstech.co"
+  },
+  "offices": [
+    {
+      "id": "india",
+      "country": "India",
+      "address": "CrossTech, 4th Floor, Infocity, Bhubaneswar,\nOdisha - 751024",
+      "mapUrl": "https://www.google.com/maps"
+    }
+  ]
+}

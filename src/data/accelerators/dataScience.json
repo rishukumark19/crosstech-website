@@ -1,0 +1,569 @@
+[
+  {
+    "id": "dn-studio",
+    "slug": "dn-studio",
+    "title": "DN-Studio",
+    "category": "Data Science",
+    "badge": "DN-Studio",
+    "imageKey": "accAi",
+    "icon": "brain",
+    "hero": {
+      "subtitle": "From project knowledge to structured SAP deliverables",
+      "hook": "Capture every conversation. Generate every deliverable. Miss nothing.",
+      "oneLiner": "What once took weeks of manual analysis and documentation now takes hours - with complete traceability from source to deliverable."
+    },
+    "overview": [
+      "An AI-powered chat console built specifically for SAP IS-U projects that captures, organises, and converts project knowledge into structured SAP deliverables. Upload your meeting recordings, business documents, screenshots, process diagrams, and project artifacts - DN-Studio combines your project knowledge with SAP IS-U implementation expertise to automatically generate BRDs, BPDs, Functional Specifications, Technical Specifications, and more. Your team spends less time documenting and more time delivering."
+    ],
+    "howItWorks": [
+      {
+        "step": "01",
+        "title": "Upload Project Inputs",
+        "detail": "Meeting recordings, documents, diagrams, screenshots, artifacts"
+      },
+      {
+        "step": "02",
+        "title": "Knowledge Extraction",
+        "detail": "AI extracts requirements, decisions, risks, processes, and dependencies"
+      },
+      {
+        "step": "03",
+        "title": "Context & Discovery",
+        "detail": "Business context, workflows, and implementation considerations surfaced automatically"
+      },
+      {
+        "step": "04",
+        "title": "Document Generation",
+        "detail": "BRDs, BPDs, Functional Specs, Technical Specs, SOPs generated for the pre-defined template structure"
+      },
+      {
+        "step": "05",
+        "title": "Human-in-the-Loop Review",
+        "detail": "Chat-based console for co-piloting, refining, and directing AI output"
+      },
+      {
+        "step": "06",
+        "title": "Source Traceability",
+        "detail": "Every deliverable can be traced back to the exact meeting, document, or artifact from which it was derived."
+      }
+    ],
+    "forEngineers": [
+      "Multi-source ingestion consolidates recordings, discussions, screenshots, diagrams, and documents into a single searchable workspace.",
+      "Automatic knowledge extraction surfaces business requirements, key decisions, risks, dependencies, processes, and implementation considerations without manual review.",
+      "Dynamic document generation produces structured, template-based BRDs, BPDs, Functional Specs, Technical Specs, and SOPs automatically.",
+      "Full source traceability links every generated deliverable back to its exact source meeting, discussion, screenshot, or document.",
+      "Chat-based co-pilot allows consultants to iteratively review, validate, and enhance AI-generated BRDs, BPDs, functional specifications, and implementation recommendations.",
+      "SAP code generation assists in producing code based on functional and technical specifications, accelerating the move from design to implementation."
+    ],
+    "forBusiness": [
+      "Eliminates weeks of manual documentation effort, accelerating SAP IS-U project delivery timelines.",
+      "Ensures no critical decision or requirement is lost across recordings, meetings, or project materials.",
+      "Structured, template-based deliverables reduce review cycles and improve stakeholder confidence.",
+      "Complete source traceability provides full audit visibility and supports change management with confidence.",
+      "Leveraging existing analysis documents, historical knowledge reduces effort and accelerates deliverable preparation.",
+      "Human-in-the-loop control ensures every deliverable is reviewed, refined, and fit for purpose before delivery."
+    ],
+    "features": [
+      {
+        "title": "Multi-Source Knowledge Capture",
+        "description": "Consolidates all your project inputs - recordings, discussions, screenshots, diagrams, and documents - into a single searchable workspace.",
+        "icon": "search"
+      },
+      {
+        "title": "Business Context & Process Discovery",
+        "description": "Automatically extracts business requirements, key decisions, risks, dependencies, processes, workflows, and implementation considerations from your project conversations and materials - all without you having to hunt through a single recording.",
+        "icon": "lineage"
+      },
+      {
+        "title": "Dynamic Document Generation",
+        "description": "From BRDs and BPDs to Functional Specs, Technical Specs, SOPs, DN-Studio generates structured, template-based deliverables automatically.",
+        "icon": "schema"
+      },
+      {
+        "title": "Knowledge Search",
+        "description": "Stop starting from scratch. DN-Studio combines your project knowledge with SAP IS-U implementation expertise, historical assets, to cut duplicate effort and accelerate delivery.",
+        "icon": "vector"
+      },
+      {
+        "title": "Source Traceability",
+        "description": "Every deliverable is traceable back to the exact meeting, discussion, screenshot, or document it came from, giving your team full visibility and confidence.",
+        "icon": "governance"
+      },
+      {
+        "title": "Human-in-the-Loop",
+        "description": "DN-Studio includes a chat-based console where you co-pilot the AI, reviewing, refining, and directing the output until every deliverable meets business requirements.",
+        "icon": "auth"
+      },
+      {
+        "title": "SAP Code Generation",
+        "description": "DN-Studio also assists in generating SAP code based on functional and technical specifications, helping your team move from design to implementation faster.",
+        "icon": "zap"
+      }
+    ]
+  },
+  {
+    "id": "sap-isu-solution-assistant",
+    "slug": "sap-isu-solution-assistant",
+    "title": "SAP IS-U Solution Assistant",
+    "category": "Data Science",
+    "badge": "SAP IS-U Solution Assistant",
+    "imageKey": "accAi",
+    "icon": "brain",
+    "hero": {
+      "subtitle": "Your Dedicated SAP IS-U Knowledge Partner. Available 24/7 with Direct, Accurate Answers.",
+      "hook": "From thousands of documents to one intelligent conversation.",
+      "oneLiner": "What used to mean hours searching through documents, tickets, and emails now means a single question and an instant answer."
+    },
+    "overview": [
+      "An intelligent, RAG-powered chatbot built specifically for SAP IS-U teams that transforms years of project documents, support artifacts, business process documentation, and organisational knowledge into a single conversational interface. Get instant, accurate, and contextual answers across implementation, configuration, enhancement, and production support scenarios - without searching a single document. Covers Device Management, Billing & Invoicing, FICA, and Meter-to-Cash Processes. Fully customisable with your organisation's own historical knowledge repositories."
+    ],
+    "howItWorks": [
+      {
+        "step": "01",
+        "title": "Ingest Knowledge Sources",
+        "detail": "Project documents, BPDs, Functional Specs, config guides, support tickets loaded into the knowledge base"
+      },
+      {
+        "step": "02",
+        "title": "Organisation-Specific Training",
+        "detail": "Knowledge base customised with your historical project artifacts, process docs, and repositories"
+      },
+      {
+        "step": "03",
+        "title": "Ask a Question",
+        "detail": "Functional consultant or business user asks a natural-language question via chat"
+      },
+      {
+        "step": "04",
+        "title": "RAG-Powered Retrieval",
+        "detail": "AI retrieves the most relevant, contextual answer from the unified knowledge repository"
+      },
+      {
+        "step": "05",
+        "title": "Instant, Trusted Answer",
+        "detail": "Accurate response delivered in seconds, grounded in your organisation's own documentation"
+      }
+    ],
+    "forEngineers": [
+      "Instant answers to implementation, configuration, enhancement, and production support questions across the SAP IS-U landscape.",
+      "Covers core functional areas including Device Management, Billing & Invoicing, FICA, and Meter-to-Cash Processes.",
+      "Cross-functional integration support - ask how modules interact, how master data objects are impacted, and what configuration is required for a given process.",
+      "Unified knowledge repository surfaces Business Process Documents, Functional Specifications, Configuration Steps, and Technical Information through a single conversational interface.",
+      "Organisation-specific intelligence trained on your historical project documents, support tickets, and knowledge repositories.",
+      "Eliminates hours spent searching through documents, tickets, and emails to find answers that already exist.",
+      "Built on knowledge curated by SAP IS-U specialists with decades of utility industry experience across implementations, upgrades, and production support."
+    ],
+    "forBusiness": [
+      "Reduces dependency on SMEs and senior consultants for day-to-day queries and operational questions.",
+      "Empowers business users with self-service access to SAP IS-U knowledge, reducing support team load.",
+      "Accelerates onboarding of new team members by giving instant access to years of accumulated project knowledge.",
+      "Improves first-time resolution of support issues by delivering accurate, contextual answers immediately.",
+      "Preserves critical organisational knowledge - converting scattered, unstructured information into an intelligent, searchable knowledge base.",
+      "Enables faster decision-making with instant access to trusted, traceable information."
+    ],
+    "features": [
+      {
+        "title": "Instant Contextual Answers",
+        "description": "Delivers immediate, actionable guidance on SAP IS-U implementation, configuration, enhancements, and production support, eliminating the need to manually dig through old tickets, documents, or emails.",
+        "icon": "zap"
+      },
+      {
+        "title": "Comprehensive Core Module Coverage",
+        "description": "Serves as a deep knowledge hub covering critical functional areas of the utility landscape, including Device Management, Billing & Invoicing, FICA, and full Meter-to-Cash processes.",
+        "icon": "search"
+      },
+      {
+        "title": "Unified Knowledge Repository",
+        "description": "Consolidates scattered, unstructured data - such as Business Process Documents (BPDs), Functional Specifications (FS), Technical Designs, and configuration guides - into a single conversational interface.",
+        "icon": "schema"
+      },
+      {
+        "title": "Organization-Specific Training",
+        "description": "Tailors its intelligence to your company's specific history by ingesting on your unique historical project documents, support artifacts, and localized process repositories.",
+        "icon": "analytics"
+      },
+      {
+        "title": "Cross-Functional Accessibility",
+        "description": "Designed to support both technical SAP Functional Consultants needing deep configuration details and Utility Business Users looking for simple, day-to-day operational answers.",
+        "icon": "compute"
+      },
+      {
+        "title": "Expert-Curated Intelligence",
+        "description": "Built on a foundation of industry expertise, leveraging knowledge curated by SAP IS-U specialists with decades of experience in utility implementations, upgrades, and support.",
+        "icon": "lineage"
+      }
+    ]
+  },
+  {
+    "id": "rom-accelerator",
+    "slug": "rom-accelerator",
+    "title": "ROM (Resource Optimization Model)",
+    "category": "Data Science",
+    "badge": "Workforce Planning & Forecasting",
+    "imageKey": "accMl",
+    "icon": "brain",
+    "hero": {
+      "subtitle": "From raw data to confident headcount forecasts - in minutes, not weeks.",
+      "hook": "Automate planning. Accelerate decisions.",
+      "oneLiner": "What used to require complex spreadsheets, guesswork, and weeks of manual analysis now produces production-ready headcount plans in minutes."
+    },
+    "overview": [
+      "A Monte Carlo-powered resource planning and demand forecasting accelerator that transforms raw workforce data into actionable headcount plans, SLA trade-off analyses, and scenario-based capacity decisions. Connect global demand signals, historical workloads, local market conditions, and custom constraints - then run simulations, compare scenarios, and export insights instantly. AI-driven explainability surfaces the core drivers behind every capacity gap so planners understand not just what the model recommends, but why."
+    ],
+    "howItWorks": [
+      {
+        "step": "01",
+        "title": "Select Domain & Area",
+        "detail": "Define the planning scope - team, region, or operational domain"
+      },
+      {
+        "step": "02",
+        "title": "Configure Constraints",
+        "detail": "Set overtime limits, productivity assumptions, contractor allocations, and SLA parameters"
+      },
+      {
+        "step": "03",
+        "title": "Run Simulations",
+        "detail": "Monte Carlo engine generates probabilistic headcount forecasts across demand scenarios"
+      },
+      {
+        "step": "04",
+        "title": "Compare Scenarios",
+        "detail": "Visualise Hard and Soft SLA trade-offs and test What-If parameters side by side"
+      },
+      {
+        "step": "05",
+        "title": "Export Insights",
+        "detail": "Download scenario comparisons, AI explanations, and planning reports for stakeholder review"
+      }
+    ],
+    "forEngineers": [
+      "Monte Carlo simulation engine generates probabilistic headcount forecasts across multiple demand and constraint scenarios simultaneously.",
+      "Scenario-based planning visualises Hard and Soft SLA trade-offs instantly - without building separate models or spreadsheets.",
+      "What-If parameter testing for overtime, productivity changes, and contractor allocation adjustments in a single intuitive UI.",
+      "AI explainability layer surfaces the core drivers behind every capacity gap and planning recommendation in plain language.",
+      "Connects to global demand signals, historical workloads, local market conditions, and custom planning constraints.",
+      "Predictive forecasting and trade-off algorithms deliver precise financial impact analysis across SLA breach costs, overtime spend, and contractor utilisation.",
+      "Full scenario tracking with historical baseline comparisons for complete audit visibility into planning decisions."
+    ],
+    "forBusiness": [
+      "Eliminates weeks of manual spreadsheet-based resource planning - production-ready headcount forecasts in minutes.",
+      "Reduces costs through precise optimisation of overtime, SLA penalties, and contractor utilisation with financial trade-off analysis.",
+      "Proactive risk management with built-in simulations that validate operational plan feasibility before commitment.",
+      "Flexible and scalable - workforce allocations adapt seamlessly as business demands evolve across regions and domains.",
+      "Audit-ready planning with full AI-driven explainability, scenario tracking, and historical baseline comparisons.",
+      "Empowers planning teams with self-service forecasting - no data science or engineering support required."
+    ],
+    "features": [
+      {
+        "title": "Monte Carlo Simulations",
+        "description": "Offers a simple, intuitive user interface to run powerful Monte Carlo simulations, eliminating the need for complex, manual modelling.",
+        "icon": "compute"
+      },
+      {
+        "title": "Scenario-Based SLA Planning",
+        "description": "Allows users to test and visualize What-If parameters - such as overtime, productivity changes, and contractor allocations - to instantly understand Hard and Soft SLA trade-offs.",
+        "icon": "layout"
+      },
+      {
+        "title": "AI-Driven Explainability",
+        "description": "Provides precision explainability powered by AI, allowing users to understand the core drivers behind capacity gaps and offering full audit-ready visibility into the why.",
+        "icon": "analytics"
+      },
+      {
+        "title": "Predictive Headcount Forecasting",
+        "description": "Accelerates planning by converting raw data into actionable, production-ready headcount forecasts in minutes rather than weeks.",
+        "icon": "drift"
+      },
+      {
+        "title": "Financial Trade-Off & Cost Optimization",
+        "description": "Features precise financial trade-off analysis tools to help reduce costs by optimizing overtime, minimizing SLA penalties, and managing contractor utilization.",
+        "icon": "sync"
+      },
+      {
+        "title": "Proactive Risk Management",
+        "description": "Features built-in risk simulations to ensure operational plan feasibility, protect budgets, and allow workforce allocations to adapt seamlessly as demands change.",
+        "icon": "alert"
+      }
+    ]
+  },
+  {
+    "id": "model-drift-accelerator",
+    "slug": "model-drift-accelerator",
+    "title": "Model Drift Accelerator",
+    "category": "Data Science",
+    "badge": "AI/ML Observability & Governance",
+    "imageKey": "accMl",
+    "icon": "brain",
+    "hero": {
+      "subtitle": "From reactive troubleshooting to proactive AI reliability. Detect drift early. Explain it instantly.",
+      "hook": "Most AI models don't fail loudly - they fail silently. Now you'll know before your users do.",
+      "oneLiner": "What used to mean silent performance drops discovered by end users now means early drift detection, instant root-cause diagnosis, and governed AI you can trust in production."
+    },
+    "overview": [
+      "A unified AI observability and governance platform covering both classical ML and LLM applications. Model Drift combines Model Monitoring and LLM Monitoring in one platform - continuously tracking quality, drift, latency, cost, and operational health. It delivers flexible ingestion pipelines, rich SHAP-based diagnostics, threshold alerting with severity escalation, and full lifecycle auditability. MLOps and LLMOps teams shift from reactive firefighting to proactive AI reliability, with complete governance visibility for risk and compliance teams."
+    ],
+    "howItWorks": [
+      {
+        "step": "01",
+        "title": "Ingest Model Data",
+        "detail": "Manual Upload, SDK Streaming, or BigQuery Batch pipelines - flexible ingestion for any deployment"
+      },
+      {
+        "step": "02",
+        "title": "Continuous Monitoring",
+        "detail": "Track accuracy, latency, errors, traffic, cost, and operational health in real time"
+      },
+      {
+        "step": "03",
+        "title": "Drift Detection",
+        "detail": "Univariate, multivariate, concept drift, and prediction drift"
+      },
+      {
+        "step": "04",
+        "title": "Root-Cause Diagnostics",
+        "detail": "SHAP-based explainability and feature-level analysis surface exactly why behaviour shifted"
+      },
+      {
+        "step": "05",
+        "title": "Alerts & Governance",
+        "detail": "Threshold-based alerts via Email, Slack, Teams, and Webhook - with full audit trails and org-scoped access control"
+      }
+    ],
+    "forEngineers": [
+      "Comprehensive model monitoring across accuracy, latency, errors, and traffic - with three flexible ingestion pipelines: Manual Upload, SDK Streaming, and BigQuery Batch processing.",
+      "Multi-method drift detection covering univariate, multivariate, concept drift, and prediction drift.",
+      "SHAP-based explainability and feature-level root-cause analysis surfaces the exact drivers behind every performance shift.",
+      "Ground truth tracking with automated comparison against live production predictions for continuous quality validation.",
+      "LLM Monitoring covers the full lifecycle - traces, sessions, agents, cost/latency analytics, embeddings, evaluations, annotations, datasets, prompts, experiments, and multi-provider playground.",
+      "Interactive dashboards with multi-model widgets and export in JSON, CSV, PNG, and PDF formats.",
+      "Human-in-the-loop annotation and comparative experimentation workflows for LLM quality review."
+    ],
+    "forBusiness": [
+      "Eliminates silent AI failures - drift is detected and explained before it reaches end users or impacts business decisions.",
+      "Full lifecycle auditability with org and project-scoped access control - compliance audit-ready at any time.",
+      "Threshold-based alerts with severity escalation notify the right stakeholders via Slack, Teams, Email, or Webhook.",
+      "Covers both classical ML and LLM applications in a single unified platform - no separate tooling for different AI types.",
+      "Reduces cost of LLM operations through continuous token cost tracking, latency monitoring, and multi-provider comparison.",
+      "Builds stakeholder trust with explainable, governed AI that can always answer why a model behaved the way it did."
+    ],
+    "features": [
+      {
+        "title": "Unified ML & LLM Control Plane",
+        "description": "Provides a single, centralized workspace and interactive dashboard to monitor classical machine learning models and LLM applications together.",
+        "icon": "layout"
+      },
+      {
+        "title": "Advanced Multi-Method Drift Detection",
+        "description": "Automatically monitors and detects various types of drift early, including univariate, prediction, concept, and multivariate drift.",
+        "icon": "drift"
+      },
+      {
+        "title": "Root-Cause Diagnostics & Explainability",
+        "description": "Moves beyond simple failure detection to explain behavioural degradation using SHAP-based explainability and feature-level analysis.",
+        "icon": "analytics"
+      },
+      {
+        "title": "Comprehensive LLM & Agent Observability",
+        "description": "Delivers real-time, end-to-end visibility into agentic AI systems and LLM workflows by tracking prompts, traces, sessions, token consumption, precise latency, cost, and operational reliability.",
+        "icon": "search"
+      },
+      {
+        "title": "Comparative Experimentation & Validation",
+        "description": "Optimizes model quality and operational spending by facilitating multi-provider validation and comparative experiments.",
+        "icon": "compute"
+      },
+      {
+        "title": "Enterprise Governance & Lifecycle Auditability",
+        "description": "Features threshold-driven alerting with severity-based escalation, role-based access controls, and full operational traceability.",
+        "icon": "governance"
+      }
+    ]
+  },
+  {
+    "id": "nexus-accelerator",
+    "slug": "nexus-accelerator",
+    "title": "Nexus",
+    "category": "Data Science",
+    "badge": "Enterprise AI Co-Pilot",
+    "imageKey": "accAi",
+    "icon": "brain",
+    "hero": {
+      "subtitle": "Universal document intelligence and workforce data, unified, real-time, and always governed.",
+      "hook": "Stop searching. Start deciding.",
+      "oneLiner": "What used to mean manual database exports, scattered documents and PDFs across departments, and delayed decisions now means real-time answers, document-grounded intelligence, and evidence-based planning - from within Microsoft Teams."
+    },
+    "overview": [
+      "A next-generation enterprise AI co-pilot purpose-built to unify document intelligence, workforce forecasting, and operational data into a single cohesive platform. Nexus connects to internal cloud databases via the Model Context Protocol (MCP) for secure, governed real-time data access, and uses Retrieval-Augmented Generation (RAG) to ingest and reason over any internal documents - policies, contracts, reports, manuals, calendars, or knowledge bases - delivering precise, grounded answers regardless of source or format. Deployed directly in Microsoft Teams, Nexus transforms static reporting and document search into adaptive, evidence-based decision-making across HR, operations, legal, finance, and beyond."
+    ],
+    "howItWorks": [
+      {
+        "step": "01",
+        "title": "Connect Data Sources",
+        "detail": "MCP-driven connectivity securely queries BigQuery and cloud databases for live operational data"
+      },
+      {
+        "step": "02",
+        "title": "Ingest Any Documents",
+        "detail": "Any document type - policies, contracts, reports, manuals, calendars, knowledge bases - is ingested and indexed via RAG architecture"
+      },
+      {
+        "step": "03",
+        "title": "Ask a Question",
+        "detail": "Any team member asks a natural-language question directly in Microsoft Teams"
+      },
+      {
+        "step": "04",
+        "title": "Grounded Intelligence",
+        "detail": "Nexus combines semantic retrieval across all ingested documents with live database access for accurate, source-grounded answers"
+      },
+      {
+        "step": "05",
+        "title": "Forecast & Decide",
+        "detail": "Forecasts, strategic recommendations, and document-grounded answers delivered instantly with full audit trails"
+      }
+    ],
+    "forEngineers": [
+      "MCP-driven connectivity securely queries cloud-hosted databases including BigQuery to fetch real-time operational data without manual intervention.",
+      "Universal document intelligence ingests and interprets any document type - not limited to a single department or document category - ensuring every response is grounded in the right source material.",
+      "RAG architecture combines semantic search across the full document library with live database access - answers are always grounded, accurate, and up to date.",
+      "Demand and resource forecasting leverages structured datasets and predictive analytics to optimise planning across functions.",
+      "Governed enterprise security maintains strict access protocols with full audit trails across all data and document interactions.",
+      "Deployed directly in Microsoft Teams - no new tools, no new logins, immediate organisational accessibility.",
+      "Bridges the gap between scattered document knowledge and real-time operational data in a single unified intelligence layer."
+    ],
+    "forBusiness": [
+      "Eliminates siloed data and document sprawl - decisions made in real time, not after days of searching through files or pulling reports.",
+      "Navigates any internal document - policies, contracts, reports, or manuals - in seconds, reducing dependency on subject-matter teams for routine queries.",
+      "Forecast demand and resourcing needs with precision - moving from gut-feel planning to data-driven confidence.",
+      "100% source-grounded responses - every answer is grounded in the actual documents and data ingested, not general AI knowledge.",
+      "Secure, governed access to cloud databases and documents ensures sensitive information is never exposed beyond authorised users.",
+      "Transforms the organisation from static, backward-looking reporting to adaptive, forward-looking decision-making, across every function."
+    ],
+    "features": [
+      {
+        "title": "MCP-Driven Connectivity",
+        "description": "Nexus uses the Model Context Protocol to securely query cloud-hosted databases and fetch real-time operational data without manual intervention.",
+        "icon": "sync"
+      },
+      {
+        "title": "Universal Document Intelligence",
+        "description": "Ingests and interprets any document type - policies, contracts, reports, manuals, calendars, or knowledge bases - to ensure governance and accuracy in every response.",
+        "icon": "search"
+      },
+      {
+        "title": "Demand & Resource Forecasting",
+        "description": "Leverages structured datasets and MCP queries to predict needs, identify gaps, and optimise planning across departments.",
+        "icon": "analytics"
+      },
+      {
+        "title": "Real-Time Knowledge Retrieval",
+        "description": "Combines semantic search across all ingested documents with live database access for data that is always accurate and up to date.",
+        "icon": "zap"
+      },
+      {
+        "title": "Governed and Secure",
+        "description": "All data and document interactions adhere to strict enterprise security protocols with full audit trails.",
+        "icon": "governance"
+      },
+      {
+        "title": "Easy Accessibility",
+        "description": "Deployed on Teams for ease of access and usage.",
+        "icon": "auth"
+      }
+    ]
+  },
+  {
+    "id": "universal-query-engine",
+    "slug": "universal-query-engine",
+    "title": "UQE (Universal Query Engine)",
+    "category": "Data Science",
+    "badge": "AI-Powered Business Intelligence",
+    "imageKey": "accMl",
+    "icon": "brain",
+    "hero": {
+      "subtitle": "From business question to clear answer - in seconds, not hours. No SQL. No dashboards. No waiting.",
+      "hook": "Ask smarter. Analyse faster. Decide with confidence.",
+      "oneLiner": "What used to mean switching between dashboards, writing SQL manually, or waiting on specialist teams now means asking a question in plain language and getting a chart, forecast, or report-ready answer instantly."
+    },
+    "overview": [
+      "A unified AI query engine that routes business questions intelligently across structured data, forecasting pipelines, and document search - all in one conversational workspace. UQE detects the intent behind every question, queries the right source, and returns instant visualisations, downloadable charts, and report-ready outputs. Conversation memory, source citations, and reusable insights keep analysis traceable and easy to share - with zero SQL expertise required from the person asking."
+    ],
+    "howItWorks": [
+      {
+        "step": "01",
+        "title": "Ask a Question",
+        "detail": "User asks any business question in natural language - no SQL, no dashboards, no tooling required"
+      },
+      {
+        "step": "02",
+        "title": "Intent Detection",
+        "detail": "UQE automatically detects whether the question needs data querying, a prediction, or a document search"
+      },
+      {
+        "step": "03",
+        "title": "Intelligent Routing",
+        "detail": "AI orchestration queries SQL databases, forecasting pipelines, or knowledge documents - or all three"
+      },
+      {
+        "step": "04",
+        "title": "Visualise Results",
+        "detail": "Charts, summaries, and structured outputs generated automatically and ready for immediate use"
+      },
+      {
+        "step": "05",
+        "title": "Download & Share",
+        "detail": "Export conversation-backed reports with supporting visuals, citations, and full analytical context"
+      }
+    ],
+    "forEngineers": [
+      "Natural language querying across SQL databases, business tables, forecasting pipelines, reports, notes, and knowledge documents - all from one interface.",
+      "Intelligent tool routing detects intent and automatically selects the right data source or analytical pathway without manual configuration.",
+      "Instant visualisations including charts, summaries, and structured outputs generated directly from conversational queries.",
+      "Conversation memory ensures context carries across a session - follow-up questions build on prior answers without starting over.",
+      "Citation-aware answers link every insight back to its source data, document, or pipeline for full analytical traceability.",
+      "Reusable insights and downloadable reports make sharing analysis across teams fast and consistent.",
+      "Powered by AI orchestration covering natural language querying, intelligent routing, chart generation, and report export."
+    ],
+    "forBusiness": [
+      "Eliminates dependency on specialist data teams for routine business questions - answers in seconds, not days.",
+      "Zero SQL expertise required - any business user can query data, request forecasts, and generate reports through natural conversation.",
+      "Unified intelligence across structured data, predictions, and document search - no more switching between multiple tools and dashboards.",
+      "Visual-first outputs mean insights are immediately presentable - charts and summaries ready for stakeholder review without additional formatting.",
+      "Shareable, citation-backed reports give decision-makers full confidence in the analysis they're acting on.",
+      "Faster decisions at every level of the business - from operational queries to strategic forecasting - without bottlenecking data teams."
+    ],
+    "features": [
+      {
+        "title": "Natural Language Querying",
+        "description": "Allows users to ask business questions and interact with data using everyday natural language, requiring zero SQL expertise or technical background.",
+        "icon": "search"
+      },
+      {
+        "title": "Intelligent Multi-Source Routing",
+        "description": "Automatically detects user intent and seamlessly routes queries across structured databases, forecasting pipelines, and unstructured knowledge documents within a single workspace.",
+        "icon": "sync"
+      },
+      {
+        "title": "Instant Visualization & Reports",
+        "description": "Automatically generates real-time charts, actionable summaries, and downloadable, report-ready visual outputs directly from every conversation.",
+        "icon": "analytics"
+      },
+      {
+        "title": "Traceable Analysis & Citations",
+        "description": "Built with conversation memory, explicit citations, and reusable insights to ensure all answers stay fully traceable, transparent, and easy to verify.",
+        "icon": "schema"
+      },
+      {
+        "title": "Unified Intelligence Ecosystem",
+        "description": "Consolidates multiple disconnected workflows into one workspace, allowing teams to query data tables, request predictive forecasts, and search enterprise documents simultaneously.",
+        "icon": "compute"
+      },
+      {
+        "title": "Shareable Insight Exports",
+        "description": "Empowers collaborative decision-making by enabling users to easily export conversation-backed reports complete with their supporting visuals, context, and historical tracking.",
+        "icon": "layout"
+      }
+    ]
+  }
+]

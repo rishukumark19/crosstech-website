@@ -1,0 +1,97 @@
+@use './variables' as *;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-family-body);
+  background-color: var(--color-background);
+  color: var(--color-text-primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
+  line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-family-heading);
+  line-height: 1.1;
+  color: var(--color-text-primary);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-family: inherit;
+}
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+// Utility classes to map HTML classes
+.gradient-text-pink {
+  background: linear-gradient(90deg, var(--color-brand-pink), #ff8a9f);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: var(--color-brand-pink);
+  
+  [data-theme="dark"] & {
+    background: none;
+    -webkit-background-clip: unset;
+    -webkit-text-fill-color: unset;
+    color: var(--color-brand-pink);
+  }
+}
+
+.gradient-text-blue {
+  background: linear-gradient(90deg, var(--color-brand-royal), #6a7cff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: var(--color-brand-royal);
+  
+  [data-theme="dark"] & {
+    background: none;
+    -webkit-background-clip: unset;
+    -webkit-text-fill-color: unset;
+    color: var(--color-brand-royal);
+  }
+}
+
+.brand-shadow {
+  box-shadow: var(--shadow-brand);
+}
+
+.animate-pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: .5; }
+}
+
+.animate-ping {
+  animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+@keyframes ping {
+  75%, 100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}

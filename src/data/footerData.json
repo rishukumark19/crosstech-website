@@ -1,0 +1,33 @@
+{
+  "cta": {
+    "heading": "Ready to build something great?",
+    "description": "Tell us about your project and we'll get back to you within 24 hours.",
+    "buttonText": "Start a Project",
+    "buttonLink": "/contact"
+  },
+  "brand": {
+    "description": "CrossTech builds, redesigns, and maintains professional websites for hospitals, institutions, political teams, and service businesses. We deliver clarity, trust, and long-term support.",
+    "copyright": "CrossTech. All rights reserved."
+  },
+  "socials": {
+    "linkedin": "https://www.linkedin.com/company/crosstech",
+    "twitter": "https://x.com/crosstechco"
+  },
+  "columns": [
+    {
+      "title": "Company",
+      "links": [
+        { "label": "About Us", "url": "/about" },
+        { "label": "Our Services", "url": "/services" },
+        { "label": "Contact", "url": "/contact" }
+      ]
+    },
+    {
+      "title": "Legal",
+      "links": [
+        { "label": "Privacy Policy", "url": "/privacy-policy" },
+        { "label": "Terms of Service", "url": "/terms-and-conditions" }
+      ]
+    }
+  ]
+}

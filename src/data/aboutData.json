@@ -1,0 +1,157 @@
+{
+  "hero": {
+    "headline": "Building Digital Trust.<br /><span class=\"gradient-text\">One Website at a Time.</span>",
+    "subHeadline": "We craft, maintain, and optimize professional websites for hospitals, educational institutions, and growing businesses — ensuring your digital presence is as reliable as the services you provide.",
+    "stats": [
+      {
+        "value": "100%",
+        "label": "Client retention"
+      },
+      {
+        "value": "24/7",
+        "label": "Reliability"
+      }
+    ]
+  },
+  "marquee": [
+    "🏥 Trusted by Healthcare Providers",
+    "⭐ 5.0/5 Client Rating",
+    "🏛️ Partner to Institutions",
+    "🚀 Mobile-First Design",
+    "💡 Ongoing Maintenance",
+    "🤝 Long-term Partnerships",
+    "📈 Performance Optimized",
+    "🎯 Accessibility Compliant",
+    "🏅 Excellence in Delivery",
+    "🌟 Secure & Reliable"
+  ],
+  "story": {
+    "eyebrow": "OUR STORY",
+    "headline": "From Frustration to Foundation",
+    "paragraphs": [
+      "We started CrossTech after watching too many critical organizations — hospitals, schools, local services — struggle with broken, outdated, or hard-to-manage websites. We realized that for these organizations, a website isn't just a marketing tool; it's essential infrastructure.",
+      "Today, we focus on building digital foundations that simply work. Fast loading times, clear navigation, robust security, and ongoing support so our clients can focus on their actual work, not on wrestling with their website."
+    ],
+    "timeline": [
+      {
+        "year": "The Spark",
+        "text": "Recognized the gap in reliable web services for essential businesses and institutions.",
+        "color": "teal"
+      },
+      {
+        "year": "The Foundation",
+        "text": "Began offering specialized redesigns focused on accessibility and core web vitals.",
+        "color": "violet"
+      },
+      {
+        "year": "The Shift",
+        "text": "Introduced comprehensive long-term maintenance plans to ensure ongoing security.",
+        "color": "orange"
+      },
+      {
+        "year": "Today",
+        "text": "Trusted by organizations that rely on their digital presence 24/7.",
+        "color": "teal"
+      }
+    ]
+  },
+  "purpose": {
+    "eyebrow": "OUR PURPOSE",
+    "headline": "Why We Build",
+    "subText": "We believe that essential organizations deserve digital infrastructure they can rely on implicitly.",
+    "mission": {
+      "statement": "To provide hospitals, schools, and service businesses with fast, secure, and accessible websites that serve their communities effectively.",
+      "pillars": [
+        "Reliability over flashiness",
+        "Accessibility for everyone",
+        "Security without compromise"
+      ]
+    },
+    "vision": {
+      "statement": "To be the trusted digital partner that organizations turn to when they need a website that works as hard as they do.",
+      "pillars": [
+        "Long-term partnerships",
+        "Continuous optimization",
+        "Community impact"
+      ]
+    }
+  },
+  "coreValues": {
+    "headline": "The Standards We Uphold",
+    "subText": "Our work is defined by a commitment to reliability, clarity, and long-term partnership.",
+    "items": [
+      {
+        "title": "Reliability First",
+        "description": "If a patient needs to find hospital hours, the site must load instantly. We build for absolute uptime."
+      },
+      {
+        "title": "Clarity over Clutter",
+        "description": "We design for the user. No confusing navigation or unnecessary animations that block information."
+      },
+      {
+        "title": "Uncompromising Security",
+        "description": "We implement strict security protocols and continuous monitoring to keep your organization safe."
+      },
+      {
+        "title": "Radical Transparency",
+        "description": "No hidden maintenance fees or confusing tech jargon. We explain exactly what we're doing and why."
+      },
+      {
+        "title": "Accessibility for All",
+        "description": "We build to strict WCAG standards, ensuring your website is usable by everyone in your community."
+      },
+      {
+        "title": "Long-Term Partnership",
+        "description": "We don't just launch and leave. We are here to maintain, update, and protect your site for years."
+      }
+    ]
+  },
+  "capabilities": {
+    "eyebrow": "OUR SERVICES",
+    "headline": "End-to-End Digital Care",
+    "subText": "From the first line of code to ongoing daily backups, we handle the technical heavy lifting.",
+    "items": [
+      {
+        "title": "Design & Build",
+        "items": [
+          "Custom Web Design",
+          "Mobile Optimization",
+          "Accessibility Compliance",
+          "Content Strategy"
+        ]
+      },
+      {
+        "title": "Performance",
+        "items": [
+          "Speed Optimization",
+          "Core Web Vitals",
+          "SEO Architecture",
+          "Asset Minification"
+        ]
+      },
+      {
+        "title": "Security",
+        "items": [
+          "SSL Configuration",
+          "Malware Scanning",
+          "Firewall Protection",
+          "Vulnerability Patching"
+        ]
+      },
+      {
+        "title": "Maintenance",
+        "items": [
+          "Daily Backups",
+          "24/7 Uptime Monitoring",
+          "Content Updates",
+          "Technical Support"
+        ]
+      }
+    ]
+  },
+  "testimonial": {
+    "quote": "CrossTech took our outdated, slow hospital website and turned it into a fast, secure, and incredibly easy-to-use resource for our patients. Their ongoing support means we never worry about downtime.",
+    "author": "Dr. James Miller",
+    "role": "Chief Administrator, Regional Medical Center"
+  }
+}

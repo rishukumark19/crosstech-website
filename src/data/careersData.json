@@ -1,0 +1,128 @@
+﻿{
+  "hero": {
+    "badge": "Build Your Career with Us",
+    "headline": "Join Us in Shaping the Future of ",
+    "headlineHighlight": "AI and Data",
+    "description": "Join a team of experienced professionals, innovators, and problem-solvers delivering transformative AI, data, and technology solutions for global enterprises. If you are passionate about continuous learning, meaningful work, and making a measurable impact, we invite you to be part of our journey.",
+    "ctaPrimary": "View Open Roles",
+    "ctaSecondary": "Learn About Us"
+  },
+  "culture": {
+    "subtitle": "OUR CULTURE",
+    "title": "A Culture Built for Growth",
+    "description": "We believe in fostering an environment where innovation meets well-being.",
+    "items": [
+      {
+        "id": "inclusive",
+        "title": "Inclusive Culture",
+        "description": "An open, collaborative environment where mutual respect and growth come standard.",
+        "icon": "users",
+        "variant": "blue"
+      },
+      {
+        "id": "velocity",
+        "title": "Career Velocity",
+        "description": "Clear paths and real backing for the people who want to move fast and go far.",
+        "icon": "trending-up",
+        "variant": "green"
+      },
+      {
+        "id": "tech",
+        "title": "A Real Tech Playground",
+        "description": "Top-tier stacks and AI-driven tooling â€” the good tools, not the legacy ones.",
+        "icon": "cpu",
+        "variant": "purple"
+      },
+      {
+        "id": "innovation",
+        "title": "Room to Invent",
+        "description": "A bias toward creative, original solutions to genuinely hard problems.",
+        "icon": "lightbulb",
+        "variant": "orange"
+      },
+      {
+        "id": "quality",
+        "title": "Quality First",
+        "description": "We protect craft. Standards and long-term maintainability arenâ€™t negotiable here.",
+        "icon": "shield",
+        "variant": "indigo"
+      },
+      {
+        "id": "rewards",
+        "title": "Rewards & Recognition",
+        "description": "Competitive pay and programs that notice the work you put in.",
+        "icon": "award",
+        "variant": "pink"
+      }
+    ]
+  },
+  "benefits": {
+    "title": "More Than a Career",
+    "description": "We strive to create an environment where employees can grow professionally, a team where your contribution in seen.",
+    "quote": "The best place to grow your career",
+    "quoteSource": "Glassdoor Review",
+    "items": [
+      {
+        "title": "Leadership Opportunities",
+        "subtitle": "Structured pathways for employees seeking to take on greater responsibility and leadership roles.",
+        "icon": "zap",
+        "variant": "cyan"
+      },
+      {
+        "title": "Global Exposure",
+        "subtitle": "Collaborate with clients and teams across industries, geographies, and technologies.",
+        "icon": "clock",
+        "variant": "blue"
+      },
+      {
+        "title": "Innovative Projects",
+        "subtitle": "Work on impactful initiatives involving AI, analytics, automation, cloud, and digital transformation.",
+        "icon": "rocket",
+        "variant": "purple"
+      },
+      {
+        "title": "Supportive Culture",
+        "subtitle": "A workplace that values inclusivity, collaboration, and long-term career success.",
+        "icon": "users",
+        "variant": "orange"
+      }
+    ]
+  },
+  "weAreHiring": {
+    "subtitle": "OPEN ROLES",
+    "title": "We Are Hiring",
+    "description": "Find your next role and take your career further. Filter by skill to see what fits.",
+    "searchPlaceholder": "Search Positions...",
+    "animatedPlaceholders": [
+      "Search positions...",
+      "Find ABAP roles...",
+      "Explore UI5 openings...",
+      "Look for SAP CRM jobs..."
+    ],
+    "emptyStateTitle": "Job Search: No Openings Found",
+    "emptyStateDescription": "We couldn't find any job positions matching \"{query}\". Our talent pool is always growing, so feel free to clear the search and browse all roles."
+  },
+  "testimonials": [
+    {
+      "id": 1,
+      "name": "Harikrishna",
+      "role": "Data Engineer",
+      "quote": "From my very first day, I was embraced by a culture that prioritizes innovation. The encouragement to take initiative has fostered personal and professional growth. It's a truly rewarding experience.",
+      "image": "avatar-harikrishna.png"
+    },
+    {
+      "id": 2,
+      "name": "Sarah Chen",
+      "role": "AI Researcher",
+      "quote": "Working at CrossTech has been a journey of constant learning. The collaborative spirit and access to cutting-edge tools make every challenge an opportunity for breakthrough.",
+      "image": "avatar-sarah.png"
+    },
+    {
+      "id": 3,
+      "name": "Alex Rivera",
+      "role": "Product Designer",
+      "quote": "Designing for data intelligence requires a unique blend of creativity and logic. The team here values design thinking, allowing us to build interfaces that are both powerful and intuitive.",
+      "image": "avatar-alex.png"
+    }
+  ]
+}

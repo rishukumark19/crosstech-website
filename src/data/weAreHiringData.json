@@ -1,0 +1,98 @@
+[
+  {
+    "id": 3,
+    "slug": "python-developer",
+    "title": "Python Developer",
+    "isNew": true,
+    "location": "Bengaluru (Onsite role – Manyata Tech Park)",
+    "noticePeriod": "Immediate joiners (preferred) or 15-30 days",
+    "onsiteOpportunities": "Yes, if required for the project.",
+    "experienceTag": "1 to 4 yrs.",
+    "tags": [
+      "Python",
+      "Django",
+      "Flask",
+      "FastAPI",
+      "REST APIs",
+      "Microservices",
+      "SQL/NoSQL",
+      "Git"
+    ],
+    "description": "We are seeking a Python Developer with 1 to 4 years of experience in building scalable backend systems and data-driven applications. The ideal candidate should have strong programming expertise in Python, experience with modern frameworks, APIs, and cloud platforms, and a solid understanding of software engineering best practices.",
+    "responsibilities": [
+      "Design, develop, test, and deploy scalable, high-performance Python applications and backend services.",
+      "Build and maintain RESTful APIs and microservices using frameworks such as Django, Flask, or FastAPI.",
+      "Write clean, efficient, and maintainable code following best practices, coding standards, and design patterns.",
+      "Collaborate with cross-functional teams (frontend, data engineering, product) to deliver end-to-end solutions.",
+      "Work on data processing, automation, and integration with third-party systems and APIs.",
+      "Optimize application performance, scalability, reliability, and security.",
+      "Debug, troubleshoot, and resolve issues across development, testing, and production environments.",
+      "Participate in code reviews, system design discussions, and contribute to architecture decisions.",
+      "Design and manage database schemas, queries, and data workflows across relational and NoSQL systems.",
+      "Support CI/CD pipelines, deployments, and release management in collaboration with DevOps teams."
+    ],
+    "requirements": [
+      "3 to 5 years of hands-on experience in Python development.",
+      "Strong proficiency in Python and backend frameworks such as Django, Flask, or FastAPI (async frameworks preferred).",
+      "Experience building REST APIs and working with microservices-based architecture.",
+      "Strong understanding of databases (PostgreSQL/MySQL) and exposure to NoSQL (MongoDB, Redis).",
+      "Experience with ORM frameworks (SQLAlchemy, Django ORM).",
+      "Familiarity with Git and collaborative development workflows.",
+      "Good understanding of SDLC, Agile methodologies, and testing practices.",
+      "Strong problem-solving, debugging, and performance optimization skills."
+    ],
+    "goodToHave": [
+      "Experience working with cloud platforms, especially GCP.",
+      "Exposure to Kubernetes.",
+      "Familiarity with asynchronous programming in Python."
+    ]
+  },
+  {
+    "id": 1,
+    "slug": "senior-sap-full-stack-developer",
+    "title": "Senior SAP Full Stack Developer",
+    "isNew": true,
+    "location": "Remote / Hybrid",
+    "noticePeriod": "30 to 60 days",
+    "onsiteOpportunities": "Project-based travel may be required.",
+    "experienceTag": "8+ Years Exp",
+    "tags": ["ABAP", "UI5", "OData"],
+    "description": "We are seeking a skilled SAP Developer with over 8 years of experience, specializing in ABAP, OData, and UI5 applications. The ideal candidate will manage SAP development aligned with business requirements, showcasing technical leadership and architectural vision across the entire stack. This involves close collaboration with business analysts and stakeholders to design and implement robust, scalable solutions.",
+    "responsibilities": [
+      "Manage SAP development aligned with business requirements.",
+      "Showcase technical leadership and architectural vision across the entire stack.",
+      "Collaborate closely with business analysts and stakeholders.",
+      "Design and implement robust, scalable SAP solutions."
+    ],
+    "requirements": [
+      "Over 8 years of experience in SAP Development.",
+      "Specialization in ABAP, OData, and UI5 applications.",
+      "Strong understanding of SAP architecture and full-stack development.",
+      "Excellent problem-solving and communication skills."
+    ]
+  },
+  {
+    "id": 2,
+    "slug": "sap-crm-developer",
+    "title": "SAP CRM Developer",
+    "isNew": false,
+    "location": "Remote / Hybrid",
+    "noticePeriod": "30 to 60 days",
+    "onsiteOpportunities": "Project-based travel may be required.",
+    "experienceTag": "Senior Level",
+    "tags": ["CRM", "ABAP", "WebUI"],
+    "description": "We are looking for an experienced SAP CRM Developer with over 8 years of expertise in SAP CRM and ABAP. The candidate will manage SAP development based on business requirements, demonstrating strong knowledge of the CRM WebUI framework and backend integration. The role requires deep expertise in customizing and extending standard CRM functionalities to meet complex enterprise needs.",
+    "responsibilities": [
+      "Manage SAP development based on business requirements.",
+      "Customize and extend standard CRM functionalities.",
+      "Work with the CRM WebUI framework and backend integration.",
+      "Develop and maintain complex enterprise CRM solutions."
+    ],
+    "requirements": [
+      "Over 8 years of expertise in SAP CRM and ABAP.",
+      "Strong knowledge of the CRM WebUI framework.",
+      "Experience in backend integration and SAP standards.",
+      "Ability to meet complex enterprise needs effectively."
+    ]
+  }
+]

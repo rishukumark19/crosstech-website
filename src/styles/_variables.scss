@@ -1,0 +1,59 @@
+:root {
+  // Light Mode Variables
+  --color-brand-pink: #e8537a;
+  --color-brand-royal: #4355b2;
+  --color-brand-sky: #46c0f7;
+  
+  --color-background: #fcfdfe;
+  --color-surface: #ffffff;
+  --color-surface-hover: #f8fafc;
+  --color-surface-alt: #f1f5f9; // slate-50
+  
+  --color-text-primary: #1e293b;
+  --color-text-secondary: #475569;
+  --color-text-muted: #94a3b8;
+  --color-text-inverse: #ffffff;
+  
+  --color-border: #f1f5f9;
+  
+  --font-family-heading: 'Inter', sans-serif;
+  --font-family-body: 'Inter', sans-serif;
+  --font-family-mono: 'Inter', monospace;
+  
+  --border-radius-base: 1.25rem;
+  --border-radius-btn: 9999px; // full
+  
+  --shadow-brand: 0 10px 30px -10px rgba(67, 85, 178, 0.1);
+  --shadow-btn: 0 4px 6px -1px rgba(67, 85, 178, 0.1);
+  --border-width: 1px;
+}
+
+[data-theme="dark"] {
+  // Dark Mode Variables (High Voltage Noir)
+  --color-brand-pink: #FFD700; // Map pink to Yellow for actions
+  --color-brand-royal: #FFD700;
+  --color-brand-sky: #00f1ff; // Tertiary cyan from design
+  
+  --color-background: #000000;
+  --color-surface: #121212;
+  --color-surface-hover: #1e1e1e;
+  --color-surface-alt: #121414;
+  
+  --color-text-primary: #ffffff;
+  --color-text-secondary: #a0a0a0;
+  --color-text-muted: #666666;
+  --color-text-inverse: #000000;
+  
+  --color-border: #2A2A2A;
+  
+  --font-family-heading: 'Syne', sans-serif;
+  --font-family-body: 'Hanken Grotesk', sans-serif;
+  --font-family-mono: 'JetBrains Mono', monospace;
+  
+  --border-radius-base: 0px; // sharp
+  --border-radius-btn: 0px; // sharp
+  
+  --shadow-brand: none; // No shadows in dark mode
+  --shadow-btn: none;
+  --border-width: 1px; // Neon frame effect uses 1px
+}

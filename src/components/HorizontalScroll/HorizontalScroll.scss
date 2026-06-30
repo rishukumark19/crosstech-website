@@ -1,0 +1,131 @@
+/* 
+  The section must be extremely tall so the user has to scroll vertically a lot.
+  The actual visible content sticks to the top.
+*/
+.horizontal-scroll-section {
+  position: relative;
+  height: 300vh; /* Determines how long the scroll lasts */
+  background-color: var(--color-background);
+}
+
+.horizontal-sticky-container {
+  position: sticky;
+  top: 0;
+  height: 100vh; /* Exactly viewport height so it locks perfectly in place */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+  padding: 0 1.5rem;
+}
+
+.horizontal-header {
+  max-width: 1280px;
+  width: 100%;
+  margin: 0 auto 3rem auto;
+
+  h2 {
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: 0.5rem;
+    background: linear-gradient(to right, var(--color-text-primary), var(--color-text-secondary));
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+
+  p {
+    font-size: 1.125rem;
+    color: var(--color-text-secondary);
+  }
+}
+
+.horizontal-scroll-window {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.horizontal-cards-track {
+  display: flex;
+  gap: 2rem;
+  /* Total width must accommodate 4 cards.
+     If each card is roughly 1/3 viewport width, we use standard widths. */
+  width: 400vw; 
+  
+  @media (min-width: 768px) {
+    width: 200vw; /* On tablet, cards are smaller relative to screen */
+  }
+  @media (min-width: 1024px) {
+    width: 120vw; /* On desktop, cards don't need as much horizontal space */
+  }
+}
+
+.horizontal-card-wrapper {
+  /* Each card takes up an equal portion of the track */
+  width: 25%; 
+  display: flex;
+}
+
+.horizontal-card {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 3rem 2rem;
+  border-radius: 2rem;
+  text-align: left;
+  transition: transform 0.3s ease;
+  
+  /* Reuse glass-panel background via class */
+  
+  &:hover {
+    transform: translateY(-10px);
+  }
+
+  h3 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: var(--color-text-primary);
+  }
+
+  p {
+    font-size: 1.125rem;
+    color: var(--color-text-secondary);
+    line-height: 1.6;
+  }
+}
+
+.horizontal-card-icon {
+  width: 5rem;
+  height: 5rem;
+  border-radius: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2rem;
+  background: var(--color-surface-alt);
+  
+  /* Shared color logic */
+  &.icon-pink { color: var(--color-brand-pink); }
+  &.icon-sky { color: var(--color-brand-sky); }
+  &.icon-royal { color: var(--color-brand-royal); }
+  &.icon-slate { color: var(--color-text-secondary); }
+
+  [data-theme="dark"] & {
+    background: rgba(255, 255, 255, 0.05);
+    &.icon-pink, &.icon-sky, &.icon-royal, &.icon-slate {
+      color: #fff;
+    }
+  }
+
+  .horizontal-card:hover & {
+    [data-theme="dark"] & {
+      color: #000;
+      &.icon-pink { background: var(--color-brand-pink); }
+      &.icon-sky { background: var(--color-brand-sky); }
+      &.icon-royal { background: var(--color-brand-royal); }
+      &.icon-slate { background: var(--color-text-secondary); }
+    }
+  }
+}

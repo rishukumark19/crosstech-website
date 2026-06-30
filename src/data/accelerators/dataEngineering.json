@@ -1,0 +1,500 @@
+[
+  {
+    "id": "bigquery-schema-guardrails",
+    "slug": "bigquery-schema-guardrails",
+    "title": "BigQuery Schema Guardrails",
+    "category": "Data Engineering",
+    "badge": "Schema Automation",
+    "imageKey": "accData",
+    "icon": "database",
+    "hero": {
+      "subtitle": "From raw data file to governed, production-ready schema automatically.",
+      "hook": "From raw data to ready schema instantly. Design once. Govern forever.",
+      "oneLiner": "What used to take half a day of manual work now takes seconds - and it never breaks downstream."
+    },
+    "kpis": [
+      "4 Input formats",
+      "8 Feature modules",
+      "3 modes Drift versioning",
+      "Zero Manual DDL writing",
+      "5 Output Artifacts"
+    ],
+    "overview": [
+      "A governed schema automation framework designed for enterprise-grade BigQuery ingestion pipelines. Provide a sample file like CSV, JSON, Avro, or Parquet and it automatically generates a production-ready BigQuery schema with recommended partitioning and clustering strategies, along with multiple standardized outputs including BigQuery CREATE TABLE DDL, BigQuery JSON schema, Migration DDL (for schema evolution), YAML configuration files, and explainable documentation for schema understanding."
+    ],
+    "howItWorks": [
+      {
+        "step": "01",
+        "title": "Provide Sample File",
+        "detail": "CSV, JSON, Avro, or Parquet"
+      },
+      {
+        "step": "02",
+        "title": "Auto-Infer Schema",
+        "detail": "Data types, nullability mode, STRUCT/RECORD fields, nested schemas, timestamps"
+      },
+      {
+        "step": "03",
+        "title": "Apply Intelligence",
+        "detail": "Partitioning, clustering, governance metadata, PII detection"
+      },
+      {
+        "step": "04",
+        "title": "Validate & Register",
+        "detail": "BigQuery validation and schema registry integration"
+      },
+      {
+        "step": "05",
+        "title": "Output Ready",
+        "detail": "DDL, JSON schema, YAML, docs generated"
+      }
+    ],
+    "forEngineers": [
+      "Auto-generates BigQuery DDLs, JSON schemas, YAML configs, migration scripts, and documentation from a single sample file",
+      "Uses deterministic SHA-256 schema fingerprinting for order-independent drift detection, breaking/non-breaking change classification, automatic versioning, and configurable Auto, Warn, and Strict enforcement modes",
+      "Maintains immutable schema registry with automatic versioning and complete schema history",
+      "Automatically suggests optimal partitioning strategies using timestamp analysis, ingestion-time fallback logic, and volume-aware heuristics",
+      "Intelligent clustering recommendations using distinct ratio analysis, null ratio evaluation, naming heuristics, and query access patterns",
+      "Advanced naming normalization for clean, standardized, BigQuery-compliant schemas",
+      "Adds enterprise-ready metadata fields including record timestamps, change tracking, and soft delete support.",
+      "Built-in BigQuery schema validation with automatic compliance checks and error handling",
+      "Identifies sensitive fields and suggests security classifications for governance readiness"
+    ],
+    "forBusiness": [
+      "Eliminates manual schema design, accelerating onboarding for new data sources",
+      "Reduces downstream failures caused by schema mismatches and structural errors",
+      "Built-in governance with version control, data tracking, and sensitive data classification.",
+      "Optimized partitioning and clustering help reduce BigQuery query costs automatically",
+      "Designed to integrate seamlessly with other accelerators in the suite.",
+      "Immutable schema registry ensures complete version tracking and change visibility"
+    ],
+    "features": [
+      {
+        "title": "Auto-Infer Schema",
+        "description": "Data types, nullability mode, STRUCT/RECORD fields, nested schemas, timestamps.",
+        "icon": "database"
+      },
+      {
+        "title": "Apply Intelligence",
+        "description": "Partitioning, clustering, governance metadata, PII detection.",
+        "icon": "brain"
+      },
+      {
+        "title": "Validate & Register",
+        "description": "BigQuery validation and schema registry integration.",
+        "icon": "checkpoint"
+      },
+      {
+        "title": "Output Ready",
+        "description": "DDL, JSON schema, YAML, docs generated.",
+        "icon": "layout"
+      },
+      {
+        "title": "Governance & Tracability",
+        "description": "Immutable schema registry ensures complete version tracking and change visibility.",
+        "icon": "governance"
+      }
+    ]
+  },
+  {
+    "id": "tagguard",
+    "slug": "tagguard",
+    "title": "TagGuard",
+    "category": "Data Engineering",
+    "badge": "Data Privacy & Compliance",
+    "imageKey": "accData",
+    "icon": "database",
+    "hero": {
+      "subtitle": "From detection to protection automatically. No blind spots. No data leaks.",
+      "hook": "Scan once. Protect always. Govern continuously.",
+      "oneLiner": "What once required weeks of manual compliance work now runs automatically every day, without anyone asking."
+    },
+    "kpis": [
+      "14 PII Bundles",
+      "220+ Standard and Custom Infotypes",
+      "Continuous Drift monitoring",
+      "Dry-run Safe testing mode",
+      "Full Audit trail"
+    ],
+    "overview": [
+      "A cloud-native data governance accelerator that extends Google Cloud DLP from detection to full enforcement, delivering a complete end-to-end PII protection workflow across BigQuery and GCS. It discovers and scans BigQuery tables and GCS files for sensitive data, automates PII detection, tagging, and masking, and provides continuous monitoring with drift detection, audit tracking, and automated alerts. Not just a scanner, a complete protection pipeline."
+    ],
+    "howItWorks": [
+      {
+        "step": "01",
+        "title": "Scan & Discover",
+        "detail": "BigQuery tables + GCS files"
+      },
+      {
+        "step": "02",
+        "title": "Detect & Classify",
+        "detail": "Standard + custom infotypes"
+      },
+      {
+        "step": "03",
+        "title": "Tag & Mask",
+        "detail": "Policy tags + dynamic masking"
+      },
+      {
+        "step": "04",
+        "title": "Monitor for Drift",
+        "detail": "Table/File changes, tag removals"
+      },
+      {
+        "step": "05",
+        "title": "Alert & Audit",
+        "detail": "DLQ, review workflows, reports"
+      }
+    ],
+    "forEngineers": [
+      "Supports scheduled and event-driven DLP scans with priority-based orchestration and parallel execution strategies",
+      "Incremental scanning detects only new or changed assets using change detection, significantly reducing sensitive data discovery and DLP scanning costs",
+      "Detects standard PII, region-specific identifiers, and custom regex-based sensitive data patterns for scalable data classification",
+      "Intelligent false-positive reduction using thresholds, allow lists, exception handling, and reusable DLP detection templates",
+      "Automatically applies policy tags, metadata-driven governance, and dynamic data masking while preserving existing security controls",
+      "Detects schema, policy, masking, and metadata drift with structured monitoring alerts and compliance visibility",
+      "DLQ and review workflows ensure reliable failure handling, audit logging, and end-to-end traceability",
+      "Supports dry-run and apply modes with quota-aware execution, operational resilience, and emergency bypass controls"
+    ],
+    "forBusiness": [
+      "Continuous automated compliance scanning across BigQuery and GCS - no manual audit efforts required",
+      "Complete visibility into where sensitive data exists across the data ecosystem",
+      "Reduces breach risk through automated detection, masking, and enforcement workflows",
+      "Incremental and cost-optimized scanning minimizes DLP processing costs on large datasets",
+      "Preserves existing governance controls and prevents accidental security downgrades",
+      "Structured alerts and monitoring provide full visibility into drift, masking, and operational issues"
+    ],
+    "features": [
+      {
+        "title": "Scan & Discover",
+        "description": "BigQuery tables + GCS files.",
+        "icon": "search"
+      },
+      {
+        "title": "Detect & Classify",
+        "description": "Standard + custom infotypes.",
+        "icon": "drift"
+      },
+      {
+        "title": "Tag & Mask",
+        "description": "Policy tags + dynamic masking.",
+        "icon": "shield"
+      },
+      {
+        "title": "Monitor for Drift",
+        "description": "Table/File changes, tag removals.",
+        "icon": "activity"
+      },
+      {
+        "title": "Alert & Audit",
+        "description": "DLQ, review workflows, reports.",
+        "icon": "alert"
+      }
+    ]
+  },
+  {
+    "id": "streamflow",
+    "slug": "streamflow",
+    "title": "StreamFlow",
+    "category": "Data Engineering",
+    "badge": "Real-Time Streaming",
+    "imageKey": "accData",
+    "icon": "database",
+    "hero": {
+      "subtitle": "Real-time data you can trust. No data loss. No delays. Just insights.",
+      "hook": "Every event captured. Every record delivered. Nothing left behind.",
+      "oneLiner": "What used to mean lost data during outages now means zero events missed, ever."
+    },
+    "kpis": [
+      "Zero Data loss guarantee",
+      "9 Core feature modules",
+      "5 paths DLQ error routing",
+      "Auto Schema evolution",
+      "Window-based event processing"
+    ],
+    "overview": [
+      "A production-ready real-time streaming ingestion framework that processes and delivers event data from Pub/Sub into BigQuery with high reliability and scalability. Designed to handle schema inference and enforcement, data validation, deduplication, late-arriving data, DLQ, and backfill - ensuring pipelines are accurate, resilient, and enterprise-ready from day one."
+    ],
+    "howItWorks": [
+      {
+        "step": "01",
+        "title": "Event Arrives",
+        "detail": "Pub/Sub message received for processing"
+      },
+      {
+        "step": "02",
+        "title": "Validate Schema",
+        "detail": "Avro validation + schema evolution checks"
+      },
+      {
+        "step": "03",
+        "title": "Store Raw Data",
+        "detail": "Raw events stored in GCS for recovery and replay"
+      },
+      {
+        "step": "04",
+        "title": "Deduplicate Events",
+        "detail": "event_id validation + TTL-based deduplication"
+      },
+      {
+        "step": "05",
+        "title": "Standardize Data",
+        "detail": "Null handling + numeric format standardization"
+      },
+      {
+        "step": "06",
+        "title": "Route & Deliver",
+        "detail": "Records routed to BigQuery Main, DLQ, late-data/ replay tables"
+      },
+      {
+        "step": "07",
+        "title": "Monitor & Replay",
+        "detail": "Metrics, alerts, lineage, replay, and backfill support"
+      }
+    ],
+    "forEngineers": [
+      "Avro schema validation with dynamic schema updates, continuous drift detection, and automatic BigQuery schema evolution without pipeline restarts",
+      "Dataflow-based streaming architecture with Pub/Sub ingestion, auto-scaling workers, backlog-aware processing, and workload balancing",
+      "Configuration-driven pipelines with customizable validation, replay, routing, schema enforcement, and source-specific processing rules",
+      "Raw data backup to GCS with structured DLQ handling and retry mechanisms",
+      "Stateful deduplication with TTL windows, latest-event-wins logic, and out-of-order event handling",
+      "Watermark-based late data routing with replay workflows and reconciliation tracking",
+      "At-least-once delivery guarantees with exponential backoff retries and replay-ready recovery architecture",
+      "Advanced data normalization for nulls, numeric formats, timestamps, and multi-encoding support",
+      "Auto-scaling streaming architecture with workload balancing and real-time operational metrics",
+      "Centralized configuration, audit logging, access control, ordered processing, and end-to-end lineage tracking"
+    ],
+    "forBusiness": [
+      "Zero data loss with raw event backup and full backfill capability at any time",
+      "Reliable real-time pipelines with accurate, gap-free, duplicate-free analytics",
+      "Built-in SLA alerts and anomaly monitoring for complete operational visibility",
+      "Late-arriving events are automatically routed and replayed to maintain data accuracy",
+      "Auto-scaling architecture handles growing enterprise streaming workloads seamlessly",
+      "Reduces engineering effort through automated schema handling, retries, deduplication, and replay management"
+    ],
+    "features": [
+      {
+        "title": "Validate Schema",
+        "description": "Avro validation + schema evolution checks.",
+        "icon": "schema"
+      },
+      {
+        "title": "Store Raw Data",
+        "description": "Raw events stored in GCS for recovery and replay.",
+        "icon": "database"
+      },
+      {
+        "title": "Deduplicate Events",
+        "description": "event_id validation + TTL-based deduplication.",
+        "icon": "sync"
+      },
+      {
+        "title": "Standardize Data",
+        "description": "Null handling + numeric format standardization.",
+        "icon": "analytics"
+      },
+      {
+        "title": "Route & Deliver",
+        "description": "Records routed to BigQuery Main, DLQ, late-data/replay tables.",
+        "icon": "partition"
+      }
+    ]
+  },
+  {
+    "id": "fileflow",
+    "slug": "fileflow",
+    "title": "FileFlow",
+    "category": "Data Engineering",
+    "badge": "Batch Ingestion",
+    "imageKey": "accData",
+    "icon": "database",
+    "hero": {
+      "subtitle": "Data pipelines reimagined through intelligence. Every record validated. Every load succeeds.",
+      "hook": "Enterprise files arrive messy. Your warehouse doesn't have to.",
+      "oneLiner": "What used to mean a week of custom loader development now means hours to production."
+    },
+    "kpis": [
+      "6 Supported File Formats",
+      "5 Core Intelligence Layers",
+      "Auto MERGE/APPEND"
+    ],
+    "overview": [
+      "A metadata-aware, schema-intelligent, resilient ingestion framework that automatically validates, transforms, governs, and lands source files from GCS into BigQuery with production-grade reliability. From raw file arrival to trusted warehouse delivery - in hours, not weeks. Supported File Formats: CSV · JSON · Avro · Parquet · ORC · Compressed Files"
+    ],
+    "howItWorks": [
+      {
+        "step": "01",
+        "title": "File Lands in GCS",
+        "detail": "Raw file arrives in landing bucket"
+      },
+      {
+        "step": "02",
+        "title": "Smart Trigger",
+        "detail": "Metadata-driven orchestration activates"
+      },
+      {
+        "step": "03",
+        "title": "Schema + Quality",
+        "detail": "Headers, data types, duplicates, corrupted files validation"
+      },
+      {
+        "step": "04",
+        "title": "Transform & Cleanse",
+        "detail": "Standardize, dedup, align to BQ structure"
+      },
+      {
+        "step": "05",
+        "title": "BigQuery Table Load",
+        "detail": "MERGE or APPEND with operational metadata"
+      },
+      {
+        "step": "06",
+        "title": "Monitor",
+        "detail": "Observability, DLQ, backfill"
+      }
+    ],
+    "forEngineers": [
+      "Supports CSV, JSON, Avro, Parquet, and ORC with configuration-driven ingestion, customizable validation rules, and metadata-based orchestration per source pipeline",
+      "Cloud Function and Composer-triggered orchestration with parameter extraction, checkpoint creation, and automated Dataflow job execution",
+      "Auto schema detection, column name normalization, duplicate header resolution, data type inference, null and type validation per file",
+      "Built-in corruption detection, compressed file handling, infrastructure validation, and poison record detection before ingestion",
+      "Deduplication engine, poison record detection applied before any BigQuery write",
+      "Smart MERGE/APPEND automation - accelerator selects the right BigQuery load strategy per table configuration; schema version registry tracks drift and evolves new fields without pipeline breaks",
+      "Automated file validation and standardization handles headers, schema mismatches, duplicate columns, nulls, invalid types, and malformed records through the built-in validation framework",
+      "Raw-to-processed bucket lifecycle management with replay-ready storage and full backfill support",
+      "Per-file audit log: filename, row count, load timestamp, status - full traceability; DLQ support ensure no file silently fails; raw storage enables full backfill",
+      "Dataflow-based scalable batch processing with workload parallelization, monitoring metrics, alerting, and environment-aware deployment controls"
+    ],
+    "forBusiness": [
+      "Rapidly onboard new data sources from raw files to production-ready warehouse ingestion",
+      "Built-in validation prevents malformed files and schema issues from reaching BigQuery",
+      "Eliminates repetitive ingestion coding through config-driven source onboarding",
+      "Ensures trusted, auditable and analytics-ready batch datasets",
+      "Scales seamlessly as new file feeds and data sources are added",
+      "Enterprise-grade reliability and monitored execution"
+    ],
+    "features": [
+      {
+        "title": "Smart Trigger",
+        "description": "Metadata-driven orchestration activates when a file lands in GCS.",
+        "icon": "activity"
+      },
+      {
+        "title": "Schema + Quality",
+        "description": "Headers, data types, duplicates, corrupted files validation.",
+        "icon": "checkpoint"
+      },
+      {
+        "title": "Transform & Cleanse",
+        "description": "Standardize, dedup, align to BQ structure.",
+        "icon": "optimization"
+      },
+      {
+        "title": "BigQuery Table Load",
+        "description": "MERGE or APPEND with operational metadata.",
+        "icon": "database"
+      },
+      {
+        "title": "Monitor",
+        "description": "Observability, DLQ, backfill capabilities.",
+        "icon": "layout"
+      }
+    ]
+  },
+  {
+    "id": "dagmatic",
+    "slug": "dagmatic",
+    "title": "DAGmatic",
+    "category": "Data Engineering",
+    "badge": "Pipeline Orchestration",
+    "imageKey": "accData",
+    "icon": "database",
+    "hero": {
+      "subtitle": "From pipeline idea to production DAG - in one governed flow.",
+      "hook": "Automation that understands dependencies. Pipelines that validate themselves.",
+      "oneLiner": "What used to take a week of Airflow coding now takes minutes from YAML."
+    },
+    "kpis": [
+      "Faster DAG onboarding",
+      "20 Service groups",
+      "17 Prebuilt templates",
+      "208 Supported operators",
+      "Zero Manual Airflow coding",
+      "Built-in SLA + failure alerts"
+    ],
+    "overview": [
+      "A production-grade DAG automation framework that converts YAML configs, metadata, SQL logic, python logic and pipeline definitions into fully standardized, enterprise-ready DAG’s for Composer. Zero manual DAG coding - define workflows in YAML; the accelerator handles schema validation, dependency graph analysis, cycle detection, branch annotation, Jinja rendering, and direct Composer deployment. Eliminates manual DAG coding and standardizes orchestration across ingestion, transformation, validation, and operational workflows."
+    ],
+    "howItWorks": [
+      {
+        "step": "01",
+        "title": "Write YAML Config",
+        "detail": "Define workflow using scaffold templates"
+      },
+      {
+        "step": "02",
+        "title": "Validate Schema",
+        "detail": "Pydantic schema + operator-level checks"
+      },
+      {
+        "step": "03",
+        "title": "Graph Analysis",
+        "detail": "Cycle detection, Branch annotation, dependency validation"
+      },
+      {
+        "step": "04",
+        "title": "Jinja Rendering",
+        "detail": "Consistent, readable DAG Python output"
+      },
+      {
+        "step": "05",
+        "title": "Deploy to Composer",
+        "detail": "Direct deployment, SLA + alerts active"
+      }
+    ],
+    "forEngineers": [
+      "Zero-code DAG creation using YAML configurations and pre-built and custom pipeline templates - no Airflow Python coding required",
+      "Intelligent YAML validation with detailed error explanations and fix suggestions using strict schema enforcement",
+      "Advanced dependency validation detects circular references, missing tasks, and invalid dependency chains automatically",
+      "Smart branch annotation automatically classifies workflow patterns and builds dependency flows",
+      "External SQL and Python file support with easily extensible operator framework",
+      "Multi-timezone scheduling visibility with customizable Jinja2-based DAG generation and direct Composer deployment",
+      "Built-in SLA monitoring, failure alerting, and environment-aware configuration for Dev, Staging, and Production"
+    ],
+    "forBusiness": [
+      "Faster pipeline onboarding by moving from pipeline definition to production-ready deployment in minutes instead of days.",
+      "Prevents broken workflows through built-in validation, dependency checks, and cycle detection",
+      "Ensures standardized pipelines with consistent scheduling, monitoring, and deployment practices",
+      "Simplifies maintenance using reusable templates, external SQL, and modular Python logic",
+      "Built-in governance with automatic SLA tracking, validation, and alerting mechanisms",
+      "Faster Cloud Composer deployment with production-ready DAG generation and minimal setup effort"
+    ],
+    "features": [
+      {
+        "title": "Write YAML Config",
+        "description": "Define workflow using scaffold templates.",
+        "icon": "layout"
+      },
+      {
+        "title": "Validate Schema",
+        "description": "Pydantic schema + operator-level checks.",
+        "icon": "checkpoint"
+      },
+      {
+        "title": "Graph Analysis",
+        "description": "Cycle detection, Branch annotation, dependency validation.",
+        "icon": "lineage"
+      },
+      {
+        "title": "Jinja Rendering",
+        "description": "Consistent, readable DAG Python output.",
+        "icon": "optimization"
+      },
+      {
+        "title": "Deploy to Composer",
+        "description": "Direct deployment, SLA + alerts active.",
+        "icon": "zap"
+      }
+    ]
+  }
+]

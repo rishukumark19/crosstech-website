@@ -1,0 +1,81 @@
+{
+  "hero": {
+    "subHeadline": "AI and Data Engineering solutions built by industry experts to solve enterprise-critical challenges and transform them into sustainable, long-term business outcomes.",
+    "capabilities": [
+      {
+        "title": "SAP Consulting & Transformation",
+        "description": "SAP solutions built for business value."
+      },
+      {
+        "title": "Business Intelligence & Advanced Analytics",
+        "description": "Insights that drive better decisions."
+      },
+      {
+        "title": "Artificial Intelligence & Machine Learning",
+        "description": "Intelligence powered by data."
+      },
+      {
+        "title": "Generative AI & Enterprise Knowledge Systems",
+        "description": "AI-driven knowledge and productivity."
+      },
+      {
+        "title": "Application Development & Modernization",
+        "description": "Applications built for scale."
+      },
+      {
+        "title": "Enterprise Integration & Connectivity",
+        "description": "Seamless connectivity across systems."
+      },
+      {
+        "title": "Quality Engineering & Testing Excellence",
+        "description": "Confidence in every release."
+      },
+      {
+        "title": "Digital Transformation & Process Innovation",
+        "description": "Transforming processes through technology."
+      },
+      {
+        "title": "Project Delivery & Program Management",
+        "description": "Execution focused on outcomes."
+      },
+      {
+        "title": "Managed Services & Operational Support",
+        "description": "Reliable support for critical operations."
+      },
+      {
+        "title": "Consulting Services",
+        "description": "Expertise where it matters most."
+      },
+      {
+        "title": "Innovation, Automation & Emerging Technologies",
+        "description": "Turning innovation into business value."
+      }
+    ],
+    "upcomingAccelerator": {
+      "label": "UPCOMING ACCELERATOR",
+      "name": "BigQuery Schema Guardrails",
+      "status": "In active development",
+      "expected": "Expected Q4 2026"
+    },
+    "linkedinCard": {
+      "tag": "JUST PUBLISHED",
+      "title": "Why config beats code for enterprise data pipelines",
+      "body": "How one configuration file now stands up a production pipeline that used to take a specialist a week.",
+      "linkText": "Read the post →"
+    },
+    "proofStats": [
+      {
+        "value": "8+",
+        "label": "Years of Industry Experience"
+      },
+      {
+        "value": "2",
+        "label": "Global Delivery Centers"
+      },
+      {
+        "value": "6+",
+        "label": "Production Ready Solutions"
+      }
+    ]
+  }
+}
