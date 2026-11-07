@@ -5,8 +5,8 @@ export default function AboutPage() {
     <main className="pt-20">
       {/* Hero Section */}
       <section className="relative overflow-hidden pt-24 pb-32 px-6 md:px-8">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-          <div className="lg:col-span-7">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 xl:grid-cols-12 gap-12 items-center">
+          <div className="xl:col-span-7 flex flex-col items-center text-center xl:items-start xl:text-left">
             <span className="inline-block px-4 py-1.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed text-xs font-bold uppercase tracking-widest mb-6">
               About CrossTech
             </span>
@@ -16,7 +16,7 @@ export default function AboutPage() {
             <p className="text-xl text-on-surface-variant max-w-2xl mb-10 leading-relaxed">
               CrossTech helps organizations build better websites and keep them professional, secure, and easier to manage over time.
             </p>
-            <div className="flex flex-wrap gap-4">
+            <div className="flex flex-wrap gap-4 justify-center xl:justify-start">
               <Link
                 to="/contact"
                 className="bg-secondary text-white px-8 py-4 rounded-xl font-semibold text-lg hover:bg-secondary-container transition-all shadow-lg shadow-secondary/20"
@@ -31,7 +31,7 @@ export default function AboutPage() {
               </Link>
             </div>
           </div>
-          <div className="lg:col-span-5 relative">
+          <div className="xl:col-span-5 relative">
             <div className="aspect-square rounded-[2rem] overflow-hidden shadow-2xl rotate-3 bg-surface-container-high">
               <img
                 alt="Modern professional office"

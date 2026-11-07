@@ -1,11 +1,23 @@
-import React, { useMemo } from 'react';
-import { motion } from 'framer-motion';
+import React, { useMemo, useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import { motion, AnimatePresence } from 'framer-motion';
 import { useTheme } from '../../ThemeContext';
 import { World } from '../ui/globe';
 import './Hero.scss';
 
+const CYCLING_WORDS = ['convert', 'grow', 'rank', 'impress', 'perform'];
+
 const Hero: React.FC = () => {
   const { theme } = useTheme();
+  const [wordIndex, setWordIndex] = useState(0);
+
+  // Cycle words every 2.5 seconds
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setWordIndex((i) => (i + 1) % CYCLING_WORDS.length);
+    }, 2500);
+    return () => clearInterval(interval);
+  }, []);
 
   const globeConfig = useMemo(() => ({
     pointSize: 4,
@@ -31,93 +43,80 @@ const Hero: React.FC = () => {
     fogColor: theme === 'dark' ? "#0a0a0a" : "#ffffff",
   }), [theme]);
 
-  const sampleArcs = useMemo(() => {
-    return [
-      {
-        order: 1,
-        startLat: -15.785493,
-        startLng: -47.909029,
-        endLat: 38.89511,
-        endLng: -77.03637,
-        arcAlt: 0.1,
-        color: "#ff007f",
-      },
-      {
-        order: 1,
-        startLat: -15.785493,
-        startLng: -47.909029,
-        endLat: 21.028511,
-        endLng: 105.83416,
-        arcAlt: 0.2,
-        color: "#00f3ff",
-      },
-      {
-        order: 1,
-        startLat: -15.785493,
-        startLng: -47.909029,
-        endLat: 51.5072,
-        endLng: -0.1276,
-        arcAlt: 0.3,
-        color: "#7000ff",
-      },
-      {
-        order: 2,
-        startLat: 38.89511,
-        startLng: -77.03637,
-        endLat: 51.5072,
-        endLng: -0.1276,
-        arcAlt: 0.1,
-        color: "#ff007f",
-      },
-      {
-        order: 3,
-        startLat: 51.5072,
-        startLng: -0.1276,
-        endLat: 21.028511,
-        endLng: 105.83416,
-        arcAlt: 0.2,
-        color: "#00f3ff",
-      }
-    ];
-  }, []);
+  const sampleArcs = useMemo(() => ([
+    { order: 1, startLat: -15.785493, startLng: -47.909029, endLat: 38.89511, endLng: -77.03637, arcAlt: 0.1, color: "#ff007f" },
+    { order: 1, startLat: -15.785493, startLng: -47.909029, endLat: 21.028511, endLng: 105.83416, arcAlt: 0.2, color: "#00f3ff" },
+    { order: 1, startLat: -15.785493, startLng: -47.909029, endLat: 51.5072, endLng: -0.1276, arcAlt: 0.3, color: "#7000ff" },
+    { order: 2, startLat: 38.89511, startLng: -77.03637, endLat: 51.5072, endLng: -0.1276, arcAlt: 0.1, color: "#ff007f" },
+    { order: 3, startLat: 51.5072, startLng: -0.1276, endLat: 21.028511, endLng: 105.83416, arcAlt: 0.2, color: "#00f3ff" },
+  ]), []);
 
   return (
     <section className="hero" data-section="Welcome">
       <div className="hero-container">
-        <motion.div 
+        <motion.div
           className="hero-text-content"
           initial={{ opacity: 0, x: -50 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
+          {/* Live status badge */}
           <div className="badge">
-            <span className="badge-dot animate-pulse"></span>
-            Crafting Digital Excellence for Clients
+            <span className="badge-dot animate-pulse" />
+            Actively building websites for clients
           </div>
-          
+
+          {/* Headline with cycling word */}
           <h1 className="hero-title">
-            Stop Losing Customers to <span className="gradient-text-pink">Slow,</span><br/>
-            Outdated <span className="gradient-text-blue">Websites.</span>
+            Websites that{' '}
+            <span className="cycling-word-wrapper">
+              <AnimatePresence mode="wait">
+                <motion.span
+                  key={wordIndex}
+                  className="gradient-text-pink cycling-word"
+                  initial={{ opacity: 0, y: 20, filter: 'blur(6px)' }}
+                  animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+                  exit={{ opacity: 0, y: -20, filter: 'blur(6px)' }}
+                  transition={{ duration: 0.4, ease: 'easeInOut' }}
+                >
+                  {CYCLING_WORDS[wordIndex]}
+                </motion.span>
+              </AnimatePresence>
+            </span>
+            <br />
+            <span className="gradient-text-blue">— built & maintained.</span>
           </h1>
-          
-          <p className="hero-description">
-            We build high-converting, lightning-fast digital experiences and provide 24/7 proactive maintenance—so you can dominate your market while we handle the tech.
-          </p>
-          
+
+          <div className="hero-description">
+            <p>We build high-converting, lightning-fast digital experiences and provide 24/7 proactive maintenance.</p>
+            <p>Dominate your market while we handle the tech.</p>
+          </div>
+
           <div className="hero-actions">
-            <button className="btn-primary-large">
+            <Link to="/contact" className="btn-primary-large">
               Book Your Free Strategy Call
-              <svg className="icon-md" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
-            </button>
-            <button className="btn-secondary-large">
+              <svg className="icon-md" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+              </svg>
+            </Link>
+            <Link to="/work" className="btn-secondary-large">
               View Our Case Studies
-              <svg className="icon-md" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M9 5l7 7-7 7"></path></svg>
-            </button>
+              <svg className="icon-md" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M9 5l7 7-7 7" />
+              </svg>
+            </Link>
+          </div>
+
+          {/* Quick trust pills */}
+          <div className="hero-trust-pills">
+            <span className="trust-pill">✅ 500+ sites launched</span>
+            <span className="trust-pill">⚡ Reply within 2 hrs</span>
+            <span className="trust-pill">🔒 99.9% uptime</span>
           </div>
         </motion.div>
 
-        <motion.div 
-          className="hero-visual" 
+        <motion.div
+          className="hero-visual"
           style={{ position: 'relative', minHeight: '500px' }}
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -133,4 +132,3 @@ const Hero: React.FC = () => {
 };
 
 export default Hero;
-

@@ -1,0 +1,136 @@
+.trust-strip {
+  padding: 2.5rem 0 3rem;
+  overflow: hidden;
+  position: relative;
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+
+  // Faded edge masks
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 120px;
+    z-index: 2;
+    pointer-events: none;
+  }
+
+  &::before {
+    left: 0;
+    background: linear-gradient(to right, var(--color-background, #fff), transparent);
+  }
+
+  &::after {
+    right: 0;
+    background: linear-gradient(to left, var(--color-background, #fff), transparent);
+  }
+
+  [data-theme="dark"] &::before {
+    background: linear-gradient(to right, var(--color-bg-dark, #08060d), transparent);
+  }
+
+  [data-theme="dark"] &::after {
+    background: linear-gradient(to left, var(--color-bg-dark, #08060d), transparent);
+  }
+}
+
+/* ── Header label ────────────────────────────── */
+.trust-strip-header {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  padding: 0 1rem;
+}
+
+.trust-strip-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--color-text-muted, #9ca3af);
+}
+
+/* ── Marquee wrapper ─────────────────────────── */
+.trust-marquee-wrapper {
+  overflow: hidden;
+  margin-bottom: 0.75rem;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.trust-marquee {
+  display: flex;
+  gap: 1rem;
+  width: max-content;
+
+  &--left {
+    animation: marqueeLeft 28s linear infinite;
+  }
+
+  &--right {
+    animation: marqueeRight 28s linear infinite;
+  }
+
+  &:hover {
+    animation-play-state: paused;
+  }
+}
+
+/* ── Logo item ───────────────────────────────── */
+.trust-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.625rem 1.25rem;
+  border-radius: 0.625rem;
+  border: 1px solid var(--color-border);
+  background: var(--color-surface-alt, rgba(248, 248, 255, 0.5));
+  white-space: nowrap;
+  cursor: default;
+  transition: border-color 0.25s, background-color 0.25s, transform 0.25s;
+  filter: grayscale(1) opacity(0.6);
+
+  &:hover {
+    filter: grayscale(0) opacity(1);
+    border-color: var(--color-brand-pink);
+    background: rgba(var(--color-brand-pink-rgb), 0.04);
+    transform: translateY(-2px);
+  }
+
+  [data-theme="dark"] & {
+    background: rgba(255, 255, 255, 0.03);
+    border-color: rgba(255, 255, 255, 0.08);
+
+    &:hover {
+      background: rgba(var(--color-brand-pink-rgb), 0.08);
+    }
+  }
+}
+
+.trust-logo-emoji {
+  font-size: 1.25rem;
+  line-height: 1;
+}
+
+.trust-logo-name {
+  font-size: 0.8125rem;
+  font-weight: 700;
+  font-family: 'Montserrat', sans-serif;
+  letter-spacing: 0.04em;
+  color: var(--color-text-secondary);
+  text-transform: uppercase;
+}
+
+/* ── Keyframes ───────────────────────────────── */
+@keyframes marqueeLeft {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes marqueeRight {
+  0% { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
+}
