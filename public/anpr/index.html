@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>AegisANPR · Live Interactive Demo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,300;0,14..32,400;0,14..32,500;0,14..32,600;0,14..32,700;0,14..32,800;0,14..32,900&family=JetBrains+Mono:wght@400;500;600;700;800&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace'],
+            display: ['Rajdhani', 'sans-serif'],
+          },
+          colors: {
+            void: '#05080f',
+            ink: '#090d18',
+            glass: '#0c1120',
+            panel: '#0f1628',
+            rim: '#1a2540',
+            accent: '#10b981',
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html, body {
+      max-width: 100vw;
+      overflow-x: hidden;
+      background-color: #05080f;
+      background-image:
+        radial-gradient(ellipse 80% 60% at 50% -10%, rgba(16,185,129,0.06) 0%, transparent 60%),
+        radial-gradient(ellipse 50% 40% at 100% 80%, rgba(56,189,248,0.04) 0%, transparent 50%);
+      font-family: 'Inter', sans-serif;
+      min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    ::-webkit-scrollbar { width: 4px; height: 4px; }
+    ::-webkit-scrollbar-track { background: transparent; }
+    ::-webkit-scrollbar-thumb { background: #1a2540; border-radius: 4px; }
+    ::-webkit-scrollbar-thumb:hover { background: #2a3a60; }
+
+    .glass {
+      background: rgba(12, 17, 32, 0.85);
+      border: 1px solid rgba(255,255,255,0.06);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+    }
+
+    @keyframes livepulse {
+      0%, 100% { opacity: 1; transform: scale(1); box-shadow: 0 0 0 0 rgba(239,68,68,0.6); }
+      50% { opacity: 0.85; transform: scale(1.15); box-shadow: 0 0 0 5px rgba(239,68,68,0); }
+    }
+    .live-dot { animation: livepulse 1.6s infinite; }
+
+    @keyframes greenpulse {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(16,185,129,0.5); }
+      50% { box-shadow: 0 0 0 6px rgba(16,185,129,0); }
+    }
+    .status-dot { animation: greenpulse 2.4s infinite; }
+
+    /* Realistic Indian HSRP Plate */
+    .hsrp-plate {
+      display: inline-flex;
+      align-items: center;
+      background: #ffffff;
+      border: 1.5px solid #111827;
+      border-radius: 5px;
+      padding: 2px 7px 2px 0px;
+      box-shadow: inset 0 0 0 1px rgba(0,0,0,0.08), 0 2px 8px rgba(0,0,0,0.5);
+      font-family: 'JetBrains Mono', monospace;
+      font-weight: 800;
+      color: #111827;
+      letter-spacing: 0.08em;
+      line-height: 1;
+      white-space: nowrap;
+      user-select: none;
+    }
+    .hsrp-plate .ind-strip {
+      background: #1a3fa0;
+      color: #fff;
+      font-size: 7px;
+      font-weight: 700;
+      font-family: 'Inter', sans-serif;
+      letter-spacing: 0.05em;
+      padding: 3px 3px;
+      border-radius: 3px 0 0 3px;
+      margin-right: 6px;
+      writing-mode: vertical-rl;
+      text-orientation: mixed;
+      transform: rotate(180deg);
+      line-height: 1;
+      min-height: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .hsrp-plate .plate-chars { font-size: 14px; }
+    .hsrp-plate.large .plate-chars { font-size: 18px; }
+    .hsrp-plate.large .ind-strip { min-height: 30px; font-size: 8px; }
+
+    @media (min-width: 640px) {
+      .hsrp-plate .plate-chars { font-size: 16px; }
+      .hsrp-plate.large .plate-chars { font-size: 22px; }
+      .hsrp-plate.large .ind-strip { min-height: 34px; font-size: 9px; }
+    }
+
+    .conf-bar-track {
+      height: 4px;
+      background: rgba(255,255,255,0.06);
+      border-radius: 99px;
+      overflow: hidden;
+      width: 100%;
+    }
+    .conf-bar-fill {
+      height: 100%;
+      border-radius: 99px;
+      transition: width 0.6s ease;
+    }
+
+    @keyframes slideInDown {
+      from { opacity: 0; transform: translateY(-10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .dossier-entry { animation: slideInDown 0.3s ease forwards; }
+
+    @keyframes alertglow {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(239,68,68,0.2); }
+      50% { box-shadow: 0 0 16px 4px rgba(239,68,68,0.15); }
+    }
+    .alert-card { animation: alertglow 2s infinite; }
+
+    .kpi-num { font-variant-numeric: tabular-nums; }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 3px;
+      padding: 2px 7px;
+      border-radius: 99px;
+      font-size: 9.5px;
+      font-weight: 600;
+      letter-spacing: 0.03em;
+      white-space: nowrap;
+    }
+    .badge-clear { background: rgba(16,185,129,0.12); color: #34d399; border: 1px solid rgba(16,185,129,0.3); }
+    .badge-alert { background: rgba(239,68,68,0.15); color: #f87171; border: 1px solid rgba(239,68,68,0.4); }
+    .badge-warn  { background: rgba(245,158,11,0.12); color: #fbbf24; border: 1px solid rgba(245,158,11,0.3); }
+    .badge-info  { background: rgba(99,102,241,0.12); color: #a5b4fc; border: 1px solid rgba(99,102,241,0.3); }
+
+    .feed-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 5px;
+      padding: 7px 12px;
+      border-radius: 8px;
+      font-size: 11px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.18s ease;
+      border: 1px solid transparent;
+      white-space: nowrap;
+      flex: 1 1 auto;
+      text-align: center;
+    }
+    .feed-btn:active { transform: scale(0.98); }
+
+    .sep { border-color: rgba(255,255,255,0.06); }
+
+    .scan-overlay {
+      position: absolute;
+      inset: 0;
+      background: repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 2px,
+        rgba(0,0,0,0.04) 2px,
+        rgba(0,0,0,0.04) 4px
+      );
+      pointer-events: none;
+    }
+
+    .corner { position: absolute; width: 14px; height: 14px; }
+    .corner-tl { top: 8px; left: 8px; border-top: 2px solid #10b981; border-left: 2px solid #10b981; }
+    .corner-tr { top: 8px; right: 8px; border-top: 2px solid #10b981; border-right: 2px solid #10b981; }
+    .corner-bl { bottom: 8px; left: 8px; border-bottom: 2px solid #10b981; border-left: 2px solid #10b981; }
+    .corner-br { bottom: 8px; right: 8px; border-bottom: 2px solid #10b981; border-right: 2px solid #10b981; }
+  </style>
+</head>
+
+<body class="text-slate-100 antialiased selection:bg-emerald-500/30 selection:text-emerald-300">
+
+  <!-- TOP NOTICE BAR -->
+  <div class="px-3 sm:px-4 py-2 text-center text-[10px] sm:text-[11px] font-medium bg-gradient-to-r from-emerald-950/80 via-slate-900 to-cyan-950/80 border-b sep flex items-center justify-between sm:justify-center gap-2">
+    <div class="flex items-center gap-1.5 truncate">
+      <span class="w-2 h-2 rounded-full bg-emerald-400 status-dot flex-shrink-0"></span>
+      <span class="text-slate-300 truncate">Interactive Demo Showcase</span>
+    </div>
+    <a href="https://github.com/rishukumark19/aegis-anpr" target="_blank" class="text-emerald-400 underline font-semibold hover:text-emerald-300 ml-1 flex-shrink-0 text-[10px]">GitHub Repo</a>
+  </div>
+
+  <!-- HEADER -->
+  <header class="sticky top-0 z-50 border-b sep" style="background: rgba(5,8,15,0.95); backdrop-filter: blur(24px);">
+    <div class="w-full max-w-[1800px] mx-auto px-3 sm:px-6 py-2.5 sm:py-3 flex flex-wrap items-center justify-between gap-2">
+      <!-- Brand -->
+      <div class="flex items-center gap-2 sm:gap-3.5 min-w-0">
+        <div class="w-8 h-8 sm:w-9 sm:h-9 rounded-xl flex items-center justify-center flex-shrink-0" style="background: linear-gradient(135deg, rgba(16,185,129,0.2), rgba(56,189,248,0.1)); border: 1px solid rgba(16,185,129,0.35);">
+          <i data-lucide="shield-check" class="text-emerald-400" style="width:17px;height:17px;"></i>
+        </div>
+        <div class="min-w-0">
+          <div class="flex items-center gap-1.5 sm:gap-2">
+            <span class="text-sm sm:text-[15px] font-bold tracking-tight text-white whitespace-nowrap">Aegis<span class="text-emerald-400">ANPR</span></span>
+            <span class="text-[8.5px] sm:text-[9px] font-mono font-bold tracking-widest uppercase px-1.5 py-0.5 rounded-full" style="background:rgba(16,185,129,0.1);color:#34d399;border:1px solid rgba(16,185,129,0.25);">Demo</span>
+          </div>
+          <p class="text-[10px] sm:text-[11px] text-slate-500 truncate hidden xs:block leading-none mt-0.5">Surveillance AI &amp; Vahan Dossier</p>
+        </div>
+      </div>
+
+      <!-- Live channel pill visible on ALL screens -->
+      <div class="flex items-center gap-1.5 px-2.5 py-1 rounded-lg" style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);">
+        <span class="w-2 h-2 rounded-full bg-emerald-400 status-dot flex-shrink-0"></span>
+        <span class="text-[10px] sm:text-[10.5px] text-slate-400">Channel:</span>
+        <span class="text-[10.5px] sm:text-[11px] font-semibold text-slate-200 max-w-[120px] xs:max-w-[180px] sm:max-w-[220px] truncate" id="current-channel-label">Gate 01 Inbound</span>
+      </div>
+
+      <!-- Header actions -->
+      <div class="flex items-center gap-1.5 sm:gap-2 flex-shrink-0">
+        <button onclick="triggerSimulatedDetection()" class="flex items-center gap-1 px-2.5 sm:px-3 py-1.5 rounded-lg text-[11px] font-bold text-slate-950 transition" style="background:linear-gradient(135deg,#10b981,#059669);">
+          <i data-lucide="sparkles" style="width:12px;height:12px;"></i>
+          <span>Scan</span>
+        </button>
+
+        <a href="https://github.com/rishukumark19/aegis-anpr" target="_blank" class="flex items-center gap-1 px-2.5 sm:px-3 py-1.5 rounded-lg text-[11px] font-semibold text-slate-300 transition" style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);">
+          <i data-lucide="github" style="width:12px;height:12px;"></i>
+          <span class="hidden sm:inline">GitHub</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN -->
+  <main class="w-full max-w-[1800px] mx-auto px-3 sm:px-6 py-4 sm:py-6 space-y-4 sm:space-y-6">
+
+    <!-- KPI STATS -->
+    <section class="grid grid-cols-2 md:grid-cols-4 gap-2.5 sm:gap-4">
+      <div class="glass rounded-xl sm:rounded-2xl p-3 sm:p-5 relative overflow-hidden">
+        <p class="text-[9px] sm:text-[10px] uppercase font-bold tracking-widest text-slate-500">Total Scanned</p>
+        <div class="mt-1 sm:mt-2 font-mono font-bold text-xl sm:text-3xl text-white kpi-num" id="stat-total">1,248</div>
+        <p class="text-[9.5px] sm:text-[11px] text-slate-500 mt-0.5 sm:mt-1 truncate">All-time detections</p>
+      </div>
+      <div class="glass rounded-xl sm:rounded-2xl p-3 sm:p-5 relative overflow-hidden">
+        <p class="text-[9px] sm:text-[10px] uppercase font-bold tracking-widest text-slate-500">Today's Traffic</p>
+        <div class="mt-1 sm:mt-2 font-mono font-bold text-xl sm:text-3xl text-white kpi-num" id="stat-today">142</div>
+        <p class="text-[9.5px] sm:text-[11px] text-emerald-400 mt-0.5 sm:mt-1 truncate font-medium kpi-num" id="stat-unique">118 unique</p>
+      </div>
+      <div class="glass rounded-xl sm:rounded-2xl p-3 sm:p-5 relative overflow-hidden">
+        <p class="text-[9px] sm:text-[10px] uppercase font-bold tracking-widest text-slate-500">AI Accuracy</p>
+        <div class="mt-1 sm:mt-2 font-mono font-bold text-xl sm:text-3xl text-emerald-400 kpi-num" id="stat-accuracy">94.8%</div>
+        <p class="text-[9.5px] sm:text-[11px] text-slate-500 mt-0.5 sm:mt-1 truncate">Indian RTO verified</p>
+      </div>
+      <div class="glass rounded-xl sm:rounded-2xl p-3 sm:p-5 relative overflow-hidden">
+        <p class="text-[9px] sm:text-[10px] uppercase font-bold tracking-widest text-slate-500">Alerts</p>
+        <div class="mt-1 sm:mt-2 font-mono font-bold text-xl sm:text-3xl text-amber-400 kpi-num" id="stat-flagged">4</div>
+        <p class="text-[9.5px] sm:text-[11px] text-slate-500 mt-0.5 sm:mt-1 truncate">Gov flag / Blacklisted</p>
+      </div>
+    </section>
+
+    <!-- LIVE MONITOR & DOSSIER -->
+    <section class="grid grid-cols-1 lg:grid-cols-12 gap-4 sm:gap-5">
+
+      <!-- LEFT: Video Box -->
+      <div class="lg:col-span-5 glass rounded-xl sm:rounded-2xl overflow-hidden flex flex-col">
+        <div class="px-3.5 sm:px-4 py-2.5 sm:py-3 flex items-center justify-between border-b sep" style="background:rgba(5,8,15,0.6);">
+          <div class="flex items-center gap-2">
+            <span class="w-2.5 h-2.5 rounded-full bg-red-500 live-dot flex-shrink-0"></span>
+            <span class="text-[10.5px] sm:text-[11px] font-bold tracking-widest uppercase text-white">Live Camera</span>
+          </div>
+          <div class="flex items-center gap-1.5">
+            <button onclick="flipMobileCamera()" class="flex items-center gap-1 px-2 py-0.5 rounded text-[10px] font-semibold text-cyan-300 transition" style="background:rgba(34,211,238,0.1);border:1px solid rgba(34,211,238,0.25);" title="Switch camera (Front / Back)">
+              <i data-lucide="switch-camera" style="width:12px;height:12px;"></i>
+              <span>Flip Camera</span>
+            </button>
+            <span class="text-[9.5px] sm:text-[10px] font-mono font-semibold px-2 py-0.5 rounded-full hidden xs:inline" style="background:rgba(16,185,129,0.1);color:#34d399;border:1px solid rgba(16,185,129,0.2);">YOLOv8 + OCR</span>
+          </div>
+        </div>
+
+        <div class="px-3 sm:px-4 py-2.5 border-b sep" style="background:rgba(5,8,15,0.4);">
+          <p class="text-[9.5px] uppercase font-bold tracking-widest text-slate-500 mb-2">Input Mode</p>
+          <div class="flex flex-wrap gap-1.5 sm:gap-2">
+            <button class="feed-btn text-white" style="background:linear-gradient(135deg, #0891b2 0%, #1d4ed8 100%);border-color:rgba(14,165,233,0.4);" onclick="startWebcam()">
+              <i data-lucide="camera" style="width:13px;height:13px;"></i>
+              <span>Use Webcam</span>
+            </button>
+            <button class="feed-btn text-purple-300" style="background:rgba(139,92,246,0.1);border-color:rgba(139,92,246,0.3);" onclick="playDemoVideo()">
+              <i data-lucide="film" style="width:13px;height:13px;"></i>
+              <span>Traffic Reel</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="relative bg-black w-full flex items-center justify-center overflow-hidden aspect-[4/3] xs:aspect-video sm:aspect-video lg:min-h-[290px]">
+          <video id="live-video" class="w-full h-full object-contain hidden" autoplay playsinline muted></video>
+          
+          <div id="video-placeholder" class="text-center p-4 sm:p-6 space-y-2.5">
+            <div class="w-12 h-12 sm:w-14 sm:h-14 mx-auto rounded-xl sm:rounded-2xl flex items-center justify-center" style="background:rgba(16,185,129,0.1);border:1px solid rgba(16,185,129,0.3);">
+              <i data-lucide="cctv" style="width:26px;height:26px;color:#34d399;"></i>
+            </div>
+            <p class="text-xs sm:text-sm font-bold text-white">Live Camera Preview</p>
+            <p class="text-[10.5px] sm:text-xs text-slate-400 max-w-xs mx-auto">Click <strong>Use Webcam</strong> to test phone recognition, or use <strong>Flip Camera</strong> on phones.</p>
+          </div>
+
+          <div class="scan-overlay"></div>
+          <div class="corner corner-tl"></div>
+          <div class="corner corner-tr"></div>
+          <div class="corner corner-bl"></div>
+          <div class="corner corner-br"></div>
+
+          <div class="absolute bottom-2.5 left-2.5 flex items-center gap-1.5 px-2.5 py-1 rounded-md text-[10px] sm:text-[11px] font-mono font-semibold text-slate-200 max-w-[85%] truncate" style="background:rgba(0,0,0,0.8);border:1px solid rgba(255,255,255,0.08);backdrop-filter:blur(8px);">
+            <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 status-dot flex-shrink-0"></span>
+            <span id="player-label" class="truncate">Gate 01 Inbound</span>
+          </div>
+        </div>
+
+        <div class="px-3.5 py-2 flex items-start gap-2 border-t sep" style="background:rgba(14,165,233,0.04);">
+          <i data-lucide="lightbulb" style="width:13px;height:13px;color:#22d3ee;flex-shrink:0;margin-top:2px;"></i>
+          <p class="text-[10px] sm:text-[11px] text-slate-400 leading-snug">
+            <span class="text-cyan-300 font-semibold">Self-Hosted:</span> Runs locally on PC/NVR with RTSP CCTV cameras at zero cloud API cost.
+          </p>
+        </div>
+      </div>
+
+      <!-- RIGHT: Instant Dossier Stream -->
+      <div class="lg:col-span-7 glass rounded-xl sm:rounded-2xl overflow-hidden flex flex-col h-[520px] sm:h-[580px]">
+        <div class="px-4 sm:px-5 py-3 border-b sep flex items-center justify-between" style="background:rgba(5,8,15,0.6);">
+          <div class="flex items-center gap-2">
+            <i data-lucide="fingerprint" style="width:15px;height:15px;color:#34d399;"></i>
+            <h2 class="text-[10.5px] sm:text-[11px] font-bold uppercase tracking-widest text-white">Live Identity Dossier</h2>
+          </div>
+          <span class="text-[9.5px] sm:text-[10px] font-mono text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded border border-emerald-500/20">WebSocket Push</span>
+        </div>
+
+        <div id="dossier-feed" class="flex-1 overflow-y-auto p-2.5 sm:p-4 space-y-2.5 sm:space-y-3">
+          <!-- Dynamic cards -->
+        </div>
+      </div>
+
+    </section>
+
+    <!-- SEARCH & AUDIT ARCHIVE -->
+    <section class="glass rounded-xl sm:rounded-2xl overflow-hidden">
+      <div class="px-4 sm:px-5 py-3.5 border-b sep flex flex-col sm:flex-row sm:items-center justify-between gap-3" style="background:rgba(5,8,15,0.5);">
+        <div>
+          <h2 class="text-xs sm:text-sm font-bold text-white flex items-center gap-1.5">
+            <i data-lucide="database" style="width:14px;height:14px;color:#60a5fa;"></i>
+            Vehicle Movement Archive
+          </h2>
+          <p class="text-[10px] sm:text-[11px] text-slate-500 mt-0.5">Filter scanned records by plate, owner, or status</p>
+        </div>
+
+        <div class="flex items-center gap-2 flex-wrap w-full sm:w-auto">
+          <input
+            type="text"
+            id="search-input"
+            placeholder="Search plate or owner..."
+            class="flex-1 sm:w-48 text-[11.5px] rounded-lg font-mono text-slate-200 placeholder-slate-600 focus:outline-none transition"
+            style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);padding:6px 10px;"
+            oninput="filterTable()"
+          />
+          <button onclick="triggerSimulatedDetection()" class="flex items-center gap-1 px-2.5 py-1.5 rounded-lg text-[10.5px] font-semibold text-slate-300 transition flex-shrink-0" style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);">
+            <i data-lucide="plus" style="width:11px;height:11px;"></i> Add Sample
+          </button>
+        </div>
+      </div>
+
+      <div class="w-full overflow-x-auto">
+        <table class="w-full text-left border-collapse min-w-[750px]">
+          <thead>
+            <tr style="border-bottom:1px solid rgba(255,255,255,0.06);background:rgba(5,8,15,0.7);">
+              <th class="px-3.5 py-2.5 text-[9.5px] font-bold uppercase tracking-widest text-slate-500 whitespace-nowrap">Time</th>
+              <th class="px-3.5 py-2.5 text-[9.5px] font-bold uppercase tracking-widest text-slate-500 whitespace-nowrap">Plate</th>
+              <th class="px-3.5 py-2.5 text-[9.5px] font-bold uppercase tracking-widest text-slate-500 whitespace-nowrap">Confidence</th>
+              <th class="px-3.5 py-2.5 text-[9.5px] font-bold uppercase tracking-widest text-slate-500 whitespace-nowrap">Verification</th>
+              <th class="px-3.5 py-2.5 text-[9.5px] font-bold uppercase tracking-widest text-slate-500 whitespace-nowrap">Security</th>
+              <th class="px-3.5 py-2.5 text-[9.5px] font-bold uppercase tracking-widest text-slate-500 whitespace-nowrap">Vehicle &amp; Owner</th>
+              <th class="px-3.5 py-2.5 text-[9.5px] font-bold uppercase tracking-widest text-slate-500 whitespace-nowrap">Registered Address</th>
+            </tr>
+          </thead>
+          <tbody id="history-table-body" class="text-slate-300 text-xs divide-y divide-white/5">
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- LIGHTBOX MODAL -->
+  <div id="image-modal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-3 sm:p-4" style="background:rgba(0,0,0,0.92);backdrop-filter:blur(12px);">
+    <div class="glass rounded-xl sm:rounded-2xl overflow-hidden max-w-3xl w-full shadow-2xl">
+      <div class="px-4 py-3 border-b sep flex items-center justify-between" style="background:rgba(5,8,15,0.7);">
+        <h3 class="text-xs sm:text-sm font-semibold text-white" id="modal-title">Verification Snapshot</h3>
+        <button onclick="closeModal()" class="text-slate-500 hover:text-white transition p-1">
+          <i data-lucide="x" style="width:16px;height:16px;"></i>
+        </button>
+      </div>
+      <div class="p-3 sm:p-4 bg-black flex items-center justify-center max-h-[75vh]">
+        <img id="modal-image" src="" alt="Snapshot" class="rounded-lg object-contain max-h-[70vh] w-full">
+      </div>
+    </div>
+  </div>
+
+  <script>
+    lucide.createIcons();
+
+    let currentFacingMode = 'user'; // 'user' (front) or 'environment' (back)
+    let currentMediaStream = null;
+
+    async function flipMobileCamera() {
+      currentFacingMode = currentFacingMode === 'user' ? 'environment' : 'user';
+      startWebcam();
+    }
+
+    const sampleVehicles = [
+      {
+        plate: 'DL2CQ3150',
+        conf: 0.932,
+        verified: true,
+        flag: 'CLEAR',
+        model: 'Hyundai Creta SX (Phantom Black)',
+        owner: 'Vikramaditya Sharma',
+        address: 'B-402, Godrej Woods, Sector 43, Noida, UP - 201301',
+        plateImg: 'https://images.unsplash.com/photo-1549399542-7e3f8b79c341?w=300&auto=format&fit=crop&q=80',
+        carImg: 'https://images.unsplash.com/photo-1552519507-da3b142c6e3d?w=300&auto=format&fit=crop&q=80'
+      },
+      {
+        plate: 'UP16BT5797',
+        conf: 0.894,
+        verified: true,
+        flag: 'CLEAR',
+        model: 'Tata Harrier Fearless+ (Daytona Grey)',
+        owner: 'Ananya Deshmukh',
+        address: 'Villa 14, Jaypee Greens, Greater Noida, UP - 201310',
+        plateImg: 'https://images.unsplash.com/photo-1549399542-7e3f8b79c341?w=300&auto=format&fit=crop&q=80',
+        carImg: 'https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=300&auto=format&fit=crop&q=80'
+      },
+      {
+        plate: 'MH02FJ8821',
+        conf: 0.912,
+        verified: false,
+        flag: 'GOV BLACKLISTED',
+        model: 'Toyota Fortuner GR-S (Super White)',
+        owner: 'Rajeshwar Pratap Singh',
+        address: 'Flat 1204, Lodha Bellissimo, Mahalaxmi, Mumbai, MH - 400011',
+        plateImg: 'https://images.unsplash.com/photo-1549399542-7e3f8b79c341?w=300&auto=format&fit=crop&q=80',
+        carImg: 'https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?w=300&auto=format&fit=crop&q=80'
+      },
+      {
+        plate: 'KA03NB4410',
+        conf: 0.941,
+        verified: true,
+        flag: 'CLEAR',
+        model: 'Mahindra XUV700 AX7L (Electric Blue)',
+        owner: 'Karthik Subramanian',
+        address: '77, Prestige Tech Vista, Kadubeesanahalli, Bengaluru, KA - 560103',
+        plateImg: 'https://images.unsplash.com/photo-1549399542-7e3f8b79c341?w=300&auto=format&fit=crop&q=80',
+        carImg: 'https://images.unsplash.com/photo-1502877338535-766e1452684a?w=300&auto=format&fit=crop&q=80'
+      },
+      {
+        plate: '22BH1402A',
+        conf: 0.887,
+        verified: true,
+        flag: 'CLEAR',
+        model: 'Kia Seltos GTX+ (Gravity Grey)',
+        owner: 'Major Devinder Rawat',
+        address: 'Officers Enclave, Delhi Cantonment, New Delhi - 110010',
+        plateImg: 'https://images.unsplash.com/photo-1549399542-7e3f8b79c341?w=300&auto=format&fit=crop&q=80',
+        carImg: 'https://images.unsplash.com/photo-1511919884226-fd3cad34687c?w=300&auto=format&fit=crop&q=80'
+      }
+    ];
+
+    let historyRecords = [...sampleVehicles];
+
+    function confColor(c) {
+      if (c >= 0.88) return '#10b981';
+      if (c >= 0.70) return '#f59e0b';
+      return '#ef4444';
+    }
+
+    function hsrpBadge(plate, size='') {
+      return `<div class="hsrp-plate ${size}">
+        <span class="ind-strip">IND</span>
+        <span class="plate-chars">${plate}</span>
+      </div>`;
+    }
+
+    function appendDossierCard(v) {
+      const feed = document.getElementById('dossier-feed');
+      const isAlert = v.flag.includes('BLACKLIST');
+      const pct = Math.round(v.conf * 100);
+      const color = confColor(v.conf);
+
+      const card = document.createElement('div');
+      card.className = `dossier-entry rounded-xl sm:rounded-2xl overflow-hidden ${isAlert ? 'alert-card' : ''}`;
+      card.style.cssText = isAlert
+        ? 'background:rgba(30,5,5,0.9);border:1px solid rgba(239,68,68,0.45);'
+        : 'background:rgba(15,22,40,0.85);border:1px solid rgba(255,255,255,0.07);';
+
+      card.innerHTML = `
+        <div class="p-3 sm:p-4">
+          <div class="flex flex-col xs:flex-row items-start xs:items-center justify-between gap-3">
+            <div class="flex items-center gap-2 flex-shrink-0">
+              <div class="relative cursor-pointer group" onclick="openModal('${v.plateImg}', 'Plate: ${v.plate}')">
+                <img src="${v.plateImg}" class="h-12 w-20 sm:h-14 sm:w-24 object-cover rounded-lg sm:rounded-xl transition group-hover:scale-105" style="border:1px solid rgba(255,255,255,0.1);background:#000;">
+                <span class="absolute bottom-1 left-1 text-[8px] sm:text-[9px] font-mono font-bold px-1 py-0.5 rounded" style="background:rgba(0,0,0,0.8);color:#94a3b8;">PLATE</span>
+              </div>
+              <div class="relative cursor-pointer group" onclick="openModal('${v.carImg}', 'Car: ${v.model}')">
+                <img src="${v.carImg}" class="h-12 w-16 sm:h-14 sm:w-20 object-cover rounded-lg sm:rounded-xl transition group-hover:scale-105" style="border:1px solid rgba(255,255,255,0.1);background:#000;">
+                <span class="absolute bottom-1 left-1 text-[8px] sm:text-[9px] font-mono font-bold px-1 py-0.5 rounded" style="background:rgba(0,0,0,0.8);color:#94a3b8;">CAR</span>
+              </div>
+            </div>
+
+            <div class="flex-1 min-w-0 w-full xs:w-auto">
+              <div class="flex flex-wrap items-center gap-2 mb-2">
+                ${hsrpBadge(v.plate, 'large')}
+                ${isAlert ? '<span class="badge badge-alert text-[10px]"><i data-lucide="alert-octagon" style="width:11px;height:11px;"></i> BLACKLIST</span>' : '<span class="badge badge-clear text-[10px]"><i data-lucide="shield-check" style="width:11px;height:11px;"></i> CLEAR</span>'}
+              </div>
+
+              <div class="mb-2">
+                <div class="flex items-center justify-between mb-1">
+                  <span class="text-[9.5px] uppercase font-bold tracking-wider text-slate-500">AI Confidence</span>
+                  <span class="font-mono text-xs font-bold" style="color:${color};">${pct}%</span>
+                </div>
+                <div class="conf-bar-track">
+                  <div class="conf-bar-fill" style="width:${pct}%;background:${color};"></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="text-right xs:self-start">
+              <span class="font-mono text-[10px] text-slate-500">${new Date().toLocaleTimeString()}</span>
+            </div>
+          </div>
+
+          <div class="mt-3 rounded-lg sm:rounded-xl p-2.5 sm:p-3 grid grid-cols-1 sm:grid-cols-3 gap-2" style="background:rgba(0,0,0,0.35);border:1px solid rgba(255,255,255,0.05);">
+            <div>
+              <p class="text-[8.5px] uppercase font-bold tracking-widest text-slate-500">Vehicle</p>
+              <p class="text-[11.5px] font-semibold text-slate-200 truncate">${v.model}</p>
+            </div>
+            <div>
+              <p class="text-[8.5px] uppercase font-bold tracking-widest text-slate-500">Registered Owner</p>
+              <p class="text-[11.5px] font-semibold text-emerald-400 truncate">${v.owner}</p>
+            </div>
+            <div>
+              <p class="text-[8.5px] uppercase font-bold tracking-widest text-slate-500">RTO Address</p>
+              <p class="text-[10.5px] text-slate-400 truncate" title="${v.address}">${v.address}</p>
+            </div>
+          </div>
+        </div>
+      `;
+
+      feed.insertBefore(card, feed.firstChild);
+      while (feed.children.length > 15) feed.removeChild(feed.lastChild);
+      lucide.createIcons();
+    }
+
+    function renderTable(items) {
+      const tbody = document.getElementById('history-table-body');
+      tbody.innerHTML = items.map(v => `
+        <tr class="transition hover:bg-white/[0.02]" style="border-bottom:1px solid rgba(255,255,255,0.04);">
+          <td class="px-3.5 py-2.5 whitespace-nowrap font-mono text-[10.5px] text-slate-500">${new Date().toLocaleTimeString()}</td>
+          <td class="px-3.5 py-2.5 whitespace-nowrap">${hsrpBadge(v.plate)}</td>
+          <td class="px-3.5 py-2.5 whitespace-nowrap font-mono font-bold text-[11px]" style="color:${confColor(v.conf)}">${Math.round(v.conf * 100)}%</td>
+          <td class="px-3.5 py-2.5 whitespace-nowrap">${v.verified ? '<span class="badge badge-clear">Verified</span>' : '<span class="badge badge-warn">Review</span>'}</td>
+          <td class="px-3.5 py-2.5 whitespace-nowrap">${v.flag.includes('BLACKLIST') ? '<span class="badge badge-alert">BLACKLISTED</span>' : '<span class="badge badge-clear">CLEAR</span>'}</td>
+          <td class="px-3.5 py-2.5">
+            <div class="font-semibold text-slate-200 text-[11.5px]">${v.model}</div>
+            <div class="text-[10.5px] text-slate-500">${v.owner}</div>
+          </td>
+          <td class="px-3.5 py-2.5 text-[10.5px] text-slate-500 max-w-[180px] truncate" title="${v.address}">${v.address}</td>
+        </tr>
+      `).join('');
+    }
+
+    function filterTable() {
+      const q = document.getElementById('search-input').value.toLowerCase();
+      const filtered = historyRecords.filter(r => 
+        r.plate.toLowerCase().includes(q) || 
+        r.owner.toLowerCase().includes(q) || 
+        r.model.toLowerCase().includes(q)
+      );
+      renderTable(filtered);
+    }
+
+    function triggerSimulatedDetection() {
+      const randomVehicle = sampleVehicles[Math.floor(Math.random() * sampleVehicles.length)];
+      appendDossierCard(randomVehicle);
+      historyRecords.unshift(randomVehicle);
+      filterTable();
+    }
+
+    async function startWebcam() {
+      const video = document.getElementById('live-video');
+      const placeholder = document.getElementById('video-placeholder');
+      if (currentMediaStream) {
+        currentMediaStream.getTracks().forEach(track => track.stop());
+      }
+      try {
+        currentMediaStream = await navigator.mediaDevices.getUserMedia({
+          video: { facingMode: currentFacingMode }
+        });
+        video.srcObject = currentMediaStream;
+        video.classList.remove('hidden');
+        placeholder.classList.add('hidden');
+        document.getElementById('player-label').innerText = `Camera (${currentFacingMode === 'user' ? 'Front' : 'Back'}) Active`;
+      } catch (err) {
+        alert('Camera access denied or camera not found.');
+      }
+    }
+
+    function playDemoVideo() {
+      alert('On-site deployment connects directly to real CCTV RTSP streams with zero delay.');
+    }
+
+    function openModal(url, title) {
+      document.getElementById('modal-image').src = url;
+      document.getElementById('modal-title').innerText = title;
+      document.getElementById('image-modal').classList.remove('hidden');
+    }
+    function closeModal() {
+      document.getElementById('image-modal').classList.add('hidden');
+    }
+
+    sampleVehicles.slice(0, 3).forEach(v => appendDossierCard(v));
+    renderTable(historyRecords);
+
+    setInterval(() => {
+      triggerSimulatedDetection();
+    }, 8500);
+  </script>
+</body>
+</html>
