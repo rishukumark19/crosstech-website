@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OmniPost · Cross-Platform Social Media Broadcaster | CrossTech</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    body {
+      background-color: #09090b;
+      color: #fafafa;
+      font-family: 'Inter', sans-serif;
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between selection:bg-neutral-800 selection:text-white">
+
+  <!-- Minimal Header -->
+  <header class="border-b border-neutral-800 bg-neutral-950/80 backdrop-blur sticky top-0 z-50">
+    <div class="max-w-5xl mx-auto px-6 h-14 flex items-center justify-between">
+      <div class="flex items-center gap-2">
+        <div class="w-2.5 h-2.5 rounded-full bg-white shadow-[0_0_8px_rgba(255,255,255,0.6)]"></div>
+        <span class="font-bold text-sm tracking-tight text-white">OmniPost</span>
+        <span class="text-xs text-neutral-500 font-mono">by CrossTech</span>
+      </div>
+      <div class="flex items-center gap-4 text-xs">
+        <a href="https://github.com/rishukumark19/omnipost-social" target="_blank" rel="noreferrer" class="text-neutral-400 hover:text-white flex items-center gap-1.5 transition-colors">
+          <i data-lucide="github" class="w-4 h-4"></i>
+          <span>GitHub</span>
+        </a>
+        <a href="http://localhost:3001" class="px-3 py-1 rounded-md bg-white text-black font-semibold hover:bg-neutral-200 transition-colors">
+          Launch App
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Content -->
+  <main class="max-w-4xl mx-auto px-6 py-16 flex-1 flex flex-col items-center justify-center text-center space-y-8">
+    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-neutral-800 bg-neutral-900/60 text-xs text-neutral-400">
+      <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+      <span>Live Production Hub</span>
+    </div>
+
+    <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight text-white max-w-2xl leading-tight">
+      1-Click Cross-Platform Social Broadcasting
+    </h1>
+
+    <p class="text-neutral-400 text-sm sm:text-base max-w-xl leading-relaxed">
+      Compose your message or upload a video once. OmniPost broadcasts it simultaneously to Instagram Reels, YouTube Shorts, X (Twitter), and Facebook Pages in parallel.
+    </p>
+
+    <!-- Platform Badges -->
+    <div class="flex flex-wrap items-center justify-center gap-3 pt-2">
+      <div class="flex items-center gap-2 px-3 py-1.5 rounded-lg border border-pink-500/20 bg-pink-500/10 text-pink-400 text-xs font-medium">
+        <i data-lucide="instagram" class="w-4 h-4"></i>
+        <span>Instagram Reels</span>
+      </div>
+      <div class="flex items-center gap-2 px-3 py-1.5 rounded-lg border border-red-500/20 bg-red-500/10 text-red-400 text-xs font-medium">
+        <i data-lucide="youtube" class="w-4 h-4"></i>
+        <span>YouTube Shorts</span>
+      </div>
+      <div class="flex items-center gap-2 px-3 py-1.5 rounded-lg border border-sky-500/20 bg-sky-500/10 text-sky-400 text-xs font-medium">
+        <i data-lucide="twitter" class="w-4 h-4"></i>
+        <span>X / Twitter</span>
+      </div>
+      <div class="flex items-center gap-2 px-3 py-1.5 rounded-lg border border-blue-500/20 bg-blue-500/10 text-blue-400 text-xs font-medium">
+        <i data-lucide="facebook" class="w-4 h-4"></i>
+        <span>Facebook Pages</span>
+      </div>
+    </div>
+
+    <!-- Actions -->
+    <div class="flex flex-wrap items-center justify-center gap-3 pt-4">
+      <a href="http://localhost:3001" class="px-5 py-2.5 rounded-xl bg-white text-black text-xs font-bold hover:bg-neutral-200 transition-all flex items-center gap-2 shadow-lg shadow-white/5">
+        <span>Open Local Studio (localhost:3001)</span>
+        <i data-lucide="arrow-right" class="w-4 h-4"></i>
+      </a>
+      <a href="https://github.com/rishukumark19/omnipost-social" target="_blank" rel="noreferrer" class="px-5 py-2.5 rounded-xl border border-neutral-800 bg-neutral-900 text-neutral-300 text-xs font-medium hover:text-white hover:border-neutral-700 transition-colors flex items-center gap-2">
+        <i data-lucide="git-branch" class="w-4 h-4"></i>
+        <span>View Source Repository</span>
+      </a>
+    </div>
+
+    <!-- Features Grid -->
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 text-left pt-12 w-full max-w-3xl">
+      <div class="p-4 rounded-xl border border-neutral-800 bg-neutral-900/30 space-y-1.5">
+        <div class="text-xs font-semibold text-white flex items-center gap-2">
+          <i data-lucide="layers" class="w-4 h-4 text-neutral-400"></i>
+          <span>Multi-Account Routing</span>
+        </div>
+        <p class="text-[11px] text-neutral-400 leading-normal">
+          Connect unlimited accounts per network and target specific groups per broadcast.
+        </p>
+      </div>
+
+      <div class="p-4 rounded-xl border border-neutral-800 bg-neutral-900/30 space-y-1.5">
+        <div class="text-xs font-semibold text-white flex items-center gap-2">
+          <i data-lucide="zap" class="w-4 h-4 text-neutral-400"></i>
+          <span>Concurrent Engine</span>
+        </div>
+        <p class="text-[11px] text-neutral-400 leading-normal">
+          Asynchronous publishing pipeline uploads and validates containers simultaneously.
+        </p>
+      </div>
+
+      <div class="p-4 rounded-xl border border-neutral-800 bg-neutral-900/30 space-y-1.5">
+        <div class="text-xs font-semibold text-white flex items-center gap-2">
+          <i data-lucide="shield-check" class="w-4 h-4 text-neutral-400"></i>
+          <span>Zero-Leak Security</span>
+        </div>
+        <p class="text-[11px] text-neutral-400 leading-normal">
+          Direct authentication with token encryption and local session isolation.
+        </p>
+      </div>
+    </div>
+  </main>
+
+  <footer class="border-t border-neutral-800/80 py-6 text-center text-xs text-neutral-500">
+    <p>&copy; 2026 CrossTech &bull; <a href="https://crosstech.in" class="hover:text-neutral-300">crosstech.in</a> &bull; <a href="https://github.com/rishukumark19/omnipost-social" class="hover:text-neutral-300 underline">rishukumark19/omnipost-social</a></p>
+  </footer>
+
+  <script>
+    lucide.createIcons();
+  </script>
+</body>
+</html>
